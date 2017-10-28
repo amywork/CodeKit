@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>codekit</string>
+				<string>CodeKit</string>
 			</array>
 		</dict>
 	</array>
