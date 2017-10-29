@@ -24,5 +24,11 @@ pod 'OAuthSwift', '~> 1.1.2'
 end
 ```
 
+### Alamofire Software Foundation
+- [Alamofire Software Foundation](https://github.com/Alamofire/Foundation)
+- **Alamofire**: An HTTP networking library for iOS and OS X
+- **AlamofireImage**: An image component library for Alamofire
+- **AlamofireNetworkActivityIndicator**: An extension for controlling the visibility of the network activity indicator on iOS
+
 ### 👌🏻Handling Git
 - [Using Git with Terminal](https://github.com/codepath/ios_guides/wiki/Using-Git-with-Terminal)
