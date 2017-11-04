@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="IssueCell" reuseIdentifier="IssueCell" id="T7i-AI-iXK" customClass="IssueCell" customModule="codekit" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="549-IS-hHD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acv-7w-6vN">
+                                <rect key="frame" x="16" y="8" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="LW4-3j-Vac"/>
+                                    <constraint firstAttribute="width" secondItem="Acv-7w-6vN" secondAttribute="height" multiplier="1:1" id="RTw-da-izk"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ic_issues_open"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V3h-PU-9j1">
+                                <rect key="frame" x="36" y="99" width="339" height="1"/>
+                                <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="RJg-Ii-CTi"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Brc-ut-ONN">
+                                <rect key="frame" x="46" y="8" width="321" height="83"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1xF-5J-jVr">
+                                        <rect key="frame" x="0.0" y="0.0" width="321" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Fanxy Fanxy Fa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hTO-Og-Jge">
+                                                <rect key="frame" x="0.0" y="0.0" width="292" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Rc-3J-gZD">
+                                                <rect key="frame" x="292" y="0.0" width="29" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="12" image="ic_comment">
+                                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="800" verticalCompressionResistancePriority="800" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3jK-2l-lb2">
+                                        <rect key="frame" x="0.0" y="20.5" width="321" height="62.5"/>
+                                        <string key="text">Label Label Label Label Label Label Label Label Label Label Label Label Label Label LabelLabel Label Label Label Label Label Label Label Label Label Label Label Label Label Label</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="V3h-PU-9j1" firstAttribute="top" secondItem="Brc-ut-ONN" secondAttribute="bottom" constant="8" id="0jX-E6-G1J"/>
+                            <constraint firstItem="Brc-ut-ONN" firstAttribute="top" secondItem="549-IS-hHD" secondAttribute="top" constant="8" id="69D-vU-oEk"/>
+                            <constraint firstItem="Brc-ut-ONN" firstAttribute="leading" secondItem="Acv-7w-6vN" secondAttribute="trailing" constant="8" id="9KR-Ae-ZUa"/>
+                            <constraint firstAttribute="trailing" secondItem="V3h-PU-9j1" secondAttribute="trailing" id="eHA-7b-fva"/>
+                            <constraint firstItem="V3h-PU-9j1" firstAttribute="leading" secondItem="549-IS-hHD" secondAttribute="leading" constant="36" id="fge-Kq-crf"/>
+                            <constraint firstAttribute="trailing" secondItem="Brc-ut-ONN" secondAttribute="trailing" constant="8" id="l1W-bR-4X4"/>
+                            <constraint firstItem="Acv-7w-6vN" firstAttribute="top" secondItem="549-IS-hHD" secondAttribute="top" constant="8" id="sdy-67-zTK"/>
+                            <constraint firstAttribute="bottom" secondItem="V3h-PU-9j1" secondAttribute="bottom" id="ts2-Uz-4fy"/>
+                            <constraint firstItem="Acv-7w-6vN" firstAttribute="leading" secondItem="549-IS-hHD" secondAttribute="leading" constant="16" id="uy1-tl-OUr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="549-IS-hHD" firstAttribute="top" secondItem="T7i-AI-iXK" secondAttribute="top" id="SLf-aK-cWb"/>
+                <constraint firstAttribute="bottom" secondItem="549-IS-hHD" secondAttribute="bottom" id="TMx-TH-GN7"/>
+                <constraint firstItem="549-IS-hHD" firstAttribute="leading" secondItem="T7i-AI-iXK" secondAttribute="leading" id="Vua-YU-Dcw"/>
+                <constraint firstAttribute="trailing" secondItem="549-IS-hHD" secondAttribute="trailing" id="XAc-K4-OXx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="36k-5T-p3G"/>
+            <size key="customSize" width="382" height="254"/>
+            <connections>
+                <outlet property="commentCountButton" destination="7Rc-3J-gZD" id="KTC-kw-Fkj"/>
+                <outlet property="contentsLabel" destination="3jK-2l-lb2" id="1wR-UV-ORu"/>
+                <outlet property="stateButton" destination="Acv-7w-6vN" id="adO-bR-vPJ"/>
+                <outlet property="titleLabel" destination="hTO-Og-Jge" id="dpy-n1-838"/>
+            </connections>
+            <point key="canvasLocation" x="106.5" y="49"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_comment" width="16" height="16"/>
+        <image name="ic_issues_open" width="21" height="21"/>
+    </resources>
+</document>

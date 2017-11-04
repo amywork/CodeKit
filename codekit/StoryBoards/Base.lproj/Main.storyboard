@@ -233,9 +233,35 @@
                     <view key="view" contentMode="scaleToFill" id="RHL-MO-lxz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3DD-DZ-itE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mfs-dw-vz2">
+                                    <size key="itemSize" width="375" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="50"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoadMoreFooterView" id="BNf-Va-unP" customClass="LoadMoreFooterView" customModule="codekit" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </collectionReusableView>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3DD-DZ-itE" firstAttribute="top" secondItem="VqE-E8-TOq" secondAttribute="top" id="OhW-4o-eNV"/>
+                            <constraint firstItem="VqE-E8-TOq" firstAttribute="trailing" secondItem="3DD-DZ-itE" secondAttribute="trailing" id="RZR-v6-cq9"/>
+                            <constraint firstItem="3DD-DZ-itE" firstAttribute="leading" secondItem="VqE-E8-TOq" secondAttribute="leading" id="owe-bX-bJt"/>
+                            <constraint firstItem="VqE-E8-TOq" firstAttribute="bottom" secondItem="3DD-DZ-itE" secondAttribute="bottom" id="p86-6e-gHV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="VqE-E8-TOq"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="3DD-DZ-itE" id="yUB-yC-VMK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olQ-Qz-LHR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
