@@ -58,11 +58,8 @@ end
 <hr>
 
 # 질문
-1. `stateButton.isSelected = issue.state == .closed` 여기에서, `issue.state == closed` 이면 `isSelected`가 `true`가 되는데,
-isSelected 되었을 때 image는 image name `(_open / _close)`를 보고 자동으로 결정되는 것인가요?
 
-
-2. 아래에서 cellFromNib을 구현하는 이유는 무엇인가요?
+1. cellFromNib으로 가져온 cell을 통해 UICollectionViewDelegateFlowLayout 여기에서 estimatedSize를 구하는 것까지는 이해가 됐는데요, 여기서는 estimateCell로 사이즈를 구하고, 위에 콜렉션뷰에서 cellForItemAt에서는 cell = collectionView.dequeueReusableCell 그냥 요렇게 했는데 여기서는 estimateCell로 안해도 되는 이유가 무엇인가요??
 
 ```
 extension IssueCell {
@@ -74,9 +71,9 @@ extension IssueCell {
 }
 ```
 
-3. init(frame:)과 init(coder aDecoder: NSCoder) 두개 모두 구현하는 이유는 무엇인가요?
+2. init(frame:)과 init(coder aDecoder: NSCoder) 두개 모두 구현하는 이유는 무엇인가요?
 
-4. loadNib() 부분과 setupNib() 부분 잘 모르겠어요 ㅠ.ㅠ
+3. loadNib() 부분과 setupNib() 부분 잘 모르겠어요 ㅠ.ㅠ
 
 ```
 class LoadMoreFooterView: UICollectionReusableView {
