@@ -15,6 +15,8 @@ final class GlobalState {
     enum Constants: String {
         case tokenKey
         case refreshTokenKey
+        case ownerKey
+        case repoKey
     }
     
     var token: String? {
@@ -35,6 +37,29 @@ final class GlobalState {
         }set {
             UserDefaults.standard.set(newValue, forKey: Constants.refreshTokenKey.rawValue)
         }
+    }
+    
+    var owner: String {
+        get {
+            let owner = UserDefaults.standard.string(forKey: Constants.ownerKey.rawValue) ?? ""
+            return owner
+        }set {
+            UserDefaults.standard.set(newValue, forKey: Constants.ownerKey.rawValue)
+        }
+    }
+    
+    var repo: String {
+        get {
+            let repo = UserDefaults.standard.string(forKey: Constants.repoKey.rawValue) ?? ""
+            return repo
+        }set {
+            UserDefaults.standard.set(newValue, forKey: Constants.repoKey.rawValue)
+        }
+    }
+    
+    var isLoggedin: Bool {
+        let isEmpty = token?.isEmpty ?? true
+        return !isEmpty
     }
     
 }

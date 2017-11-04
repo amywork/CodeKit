@@ -1,21 +1,19 @@
 //
-//  API.swift
+//  GithubAPI.swift
 //  codekit
 //
-//  Created by Kimkeeyun on 28/10/2017.
+//  Created by 김기윤 on 04/11/2017.
 //  Copyright © 2017 yunari.me. All rights reserved.
 //
 
 import Foundation
 import OAuthSwift
+import SwiftyJSON
+import Alamofire
 
-protocol API {
-    func getToken(handler: @escaping(() -> Void))
-    func tokenRefresh(handler: @escaping(() -> Void))
-}
-
+typealias IssuesResponseHandler = (DataResponse<[Model.Issue]>) -> Void
 struct GitHubAPI: API {
-
+    
     let oauth: OAuth2Swift = OAuth2Swift(
         consumerKey: "9ad9115f8b0596c0587b",
         consumerSecret: "6bbd79952ce40b83f42280896bb4120e0a4064fd",
@@ -54,5 +52,19 @@ struct GitHubAPI: API {
             print(error.localizedDescription)
         }
     }
+    
+    func repoIssues(owner: String, repo: String, page: Int, handler: @escaping IssuesResponseHandler) {
+        let parameters: Parameters = ["page": page, "state": "all"]
+        GitHubRouter.manager.request(GitHubRouter.repoIssues(owner: owner, repo: repo, parameter: parameters)).responseSwiftyJSON { (dataResponse: DataResponse<JSON>) in
+            let result: DataResponse<[Model.Issue]> = dataResponse.map({ (json: JSON) -> [Model.Issue] in
+                return json.arrayValue.map({ (json: JSON) -> Model.Issue in
+                    return Model.Issue(json: json)
+                })
+            })
+            handler(result)
+        }
+    }
+    
 }
+
 
