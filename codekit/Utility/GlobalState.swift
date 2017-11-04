@@ -11,7 +11,7 @@ import Foundation
 final class GlobalState {
     
     static let instance = GlobalState()
-    
+
     enum Constants: String {
         case tokenKey
         case refreshTokenKey
@@ -63,8 +63,10 @@ final class GlobalState {
         return !isEmpty
     }
     
+    
     var repos: [(owner: String, repo: String)] {
         let repoDics: [[String:String]] = UserDefaults.standard.array(forKey: Constants.reposKey.rawValue) as? [[String:String]] ?? []
+        // dictionary -> tuple
         let repos = repoDics.map { (repoDic: [String:String]) -> (String,String) in
             let owner = repoDic["owner"] ?? ""
             let repo = repoDic["repo"] ?? ""
@@ -78,10 +80,11 @@ final class GlobalState {
         let dic = ["owner": owner, "repo": repo]
         var repos: [[String:String]] = UserDefaults.standard.array(forKey: Constants.reposKey.rawValue) as? [[String:String]] ?? []
         repos.append(dic)
-        //집합으로 바꿔서 중복 제거하고 arr로 바꿔서 다시 Userdefualt에 넣어주기
+        /* append 했을 때 중복이 발생할 수 있으므로
+         arr -> set(집합)으로 바꿔서 중복 제거하고 arr로 바꿔서 다시 Userdefualt에 set
+         */
         UserDefaults.standard.set(NSSet(array: repos).allObjects, forKey: Constants.reposKey.rawValue)
     }
-    
     
 }
 

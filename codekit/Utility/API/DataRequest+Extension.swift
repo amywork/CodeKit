@@ -4,7 +4,7 @@
 //
 //  Created by Leonard on 2017. 9. 10..
 //  Copyright © 2017년 intmain. All rights reserved.
-//
+//  JSON -> SwiftyJSON
 
 import Foundation
 import Alamofire

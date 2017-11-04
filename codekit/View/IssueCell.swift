@@ -24,11 +24,22 @@ extension IssueCell {
     
     func configureCell(data issue: Model.Issue) {
         titleLabel.text = issue.title
-        //let createdAt: String = issue.createdAt?.string(dateFormat: "ddMMM") ?? "-"
-        contentsLabel.text = "#\(issue.number) \(issue.state.rawValue) on createdAt by \(issue.user.login)"
+        let createdAt: String = issue.createdAt?.string(dateFormat: "dd MMM yyyy") ?? "-"
+        contentsLabel.text = "#\(issue.number) \(issue.state.rawValue) on \(createdAt) by \(issue.user.login)"
         stateButton.isSelected = issue.state == .closed
         commentCountButton.setTitle("\(issue.comments)", for: .normal)
-        let commentCountHidden = issue.comments == 0
-        commentCountButton.isHidden = commentCountHidden
+        let commentCountHidden: Bool = issue.comments == 0
+        commentCountButton.alpha = commentCountHidden ? 0 : 1
     }
 }
+
+// Date -> String
+extension Date {
+    func string(dateFormat: String, locale: String = "en-US") -> String {
+        let format = DateFormatter()
+        format.dateFormat = dateFormat
+        format.locale = Locale(identifier: locale)
+        return format.string(from: self)
+    }
+}
+

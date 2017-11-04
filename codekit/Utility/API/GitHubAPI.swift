@@ -5,6 +5,9 @@
 //  Created by 김기윤 on 04/11/2017.
 //  Copyright © 2017 yunari.me. All rights reserved.
 //
+//  Client ID : 9ad9115f8b0596c0587b
+//  Client Secret : 6bbd79952ce40b83f42280896bb4120e0a4064fd
+//  https://github.com/settings/applications/611648
 
 import Foundation
 import OAuthSwift
@@ -37,14 +40,13 @@ struct GitHubAPI: API {
             print(error.localizedDescription)
         }
     }
-    
+
     func tokenRefresh(handler: @escaping (() -> Void)) {
         guard let refreshToken =
             GlobalState.instance.refreshToken else { return }
         oauth.renewAccessToken(withRefreshToken: refreshToken, success: { (credential, _, _) in
             let token = credential.oauthToken
             let refreshToken = credential.oauthRefreshToken
-            print("token: \(token)")
             GlobalState.instance.token = token
             GlobalState.instance.refreshToken = refreshToken
             handler()

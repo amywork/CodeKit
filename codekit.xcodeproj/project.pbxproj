@@ -153,8 +153,8 @@
 			children = (
 				DDA1E8161FADC0F6000472F4 /* LoadMoreFooterView.swift */,
 				DDA1E8171FADC0F6000472F4 /* LoadMoreFooterView.xib */,
-				DDA1E80C1FADA6EF000472F4 /* IssueCell.xib */,
 				DDA1E80E1FADACEA000472F4 /* IssueCell.swift */,
+				DDA1E80C1FADA6EF000472F4 /* IssueCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

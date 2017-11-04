@@ -4,14 +4,13 @@
 //
 //  Created by 김기윤 on 04/11/2017.
 //  Copyright © 2017 yunari.me. All rights reserved.
-//  init(json: JSON)
+//  init with JSON
 //  https://developer.github.com/v3/issues/#list-issues-for-a-repository
 
 import Foundation
 import SwiftyJSON
 
 struct Model {
-    
 }
 
 // User Model
@@ -46,7 +45,6 @@ extension Model {
         let state: State
         
         init(json: JSON) {
-            print("issue json: \(json)")
             id = json["id"].intValue
             number = json["number"].intValue
             title = json["title"].stringValue

@@ -10,6 +10,7 @@ import UIKit
 
 @IBDesignable
 class LoadMoreFooterView: UICollectionReusableView {
+    
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet var doneView: UIView!
     

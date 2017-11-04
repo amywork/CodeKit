@@ -14,4 +14,3 @@ protocol API {
     func tokenRefresh(handler: @escaping(() -> Void))
     func repoIssues(owner: String, repo: String, page: Int, handler: @escaping IssuesResponseHandler)
 }
-

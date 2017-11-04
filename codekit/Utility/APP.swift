@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 struct App {
     static var api: API = GitHubAPI()
 }
