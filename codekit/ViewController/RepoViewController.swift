@@ -11,18 +11,30 @@ import UIKit
 class RepoViewController: UIViewController {
 
     @IBOutlet weak var ownerTextField: UITextField!
-    
     @IBOutlet weak var repoTextField: UITextField!
+    
+    // Enter 하기 전에 ViewController에 Owner, Repo 데이터를 셋팅
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EnterRepoSegue" {
+            guard let owner = ownerTextField.text, let repo = repoTextField.text else { return }
+            GlobalState.instance.owner = owner
+            GlobalState.instance.repo = repo
+            GlobalState.instance.addRepo(owner: owner, repo: repo)
+        }
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "EnterRepoSegue" {
+            guard let owner = ownerTextField.text, let repo = repoTextField.text else { return false }
+            return !(owner.isEmpty || repo.isEmpty)
+        }
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    // Enter 하기 전에 ViewController에 데이터를 셋팅
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EnterRepoSegue" {
-            
-        }
+        ownerTextField.text = GlobalState.instance.owner
+        repoTextField.text = GlobalState.instance.repo
     }
 
 }
@@ -36,13 +48,22 @@ extension RepoViewController {
             [weak self] in
             self?.present(loginViewController, animated: true, completion: nil)
         }
-        
     }
     
     @IBAction func enterButtonTapped(_ sender: UIButton) {
         
     }
     
+    @IBAction func unwindFromRepos(_ segue: UIStoryboardSegue) {
+        guard let reposViewController = segue.source as? ReposViewController else { return }
+        guard let (owner, repo) = reposViewController.selectedRepo else { return }
+        ownerTextField.text = owner
+        repoTextField.text = repo
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.0 ) {
+            [weak self] in
+            self?.performSegue(withIdentifier: "EnterRepoSegue", sender: nil)
+        }
+    }
     
     
 }

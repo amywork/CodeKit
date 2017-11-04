@@ -17,6 +17,7 @@ final class GlobalState {
         case refreshTokenKey
         case ownerKey
         case repoKey
+        case reposKey
     }
     
     var token: String? {
@@ -61,6 +62,26 @@ final class GlobalState {
         let isEmpty = token?.isEmpty ?? true
         return !isEmpty
     }
+    
+    var repos: [(owner: String, repo: String)] {
+        let repoDics: [[String:String]] = UserDefaults.standard.array(forKey: Constants.reposKey.rawValue) as? [[String:String]] ?? []
+        let repos = repoDics.map { (repoDic: [String:String]) -> (String,String) in
+            let owner = repoDic["owner"] ?? ""
+            let repo = repoDic["repo"] ?? ""
+            return (owner, repo)
+        }
+        return repos
+    }
+    
+    
+    func addRepo(owner: String, repo: String){
+        let dic = ["owner": owner, "repo": repo]
+        var repos: [[String:String]] = UserDefaults.standard.array(forKey: Constants.reposKey.rawValue) as? [[String:String]] ?? []
+        repos.append(dic)
+        //집합으로 바꿔서 중복 제거하고 arr로 바꿔서 다시 Userdefualt에 넣어주기
+        UserDefaults.standard.set(NSSet(array: repos).allObjects, forKey: Constants.reposKey.rawValue)
+    }
+    
     
 }
 

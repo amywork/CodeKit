@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Alamofire
 
 class IssuesViewController: UIViewController {
 
+    let owner: String = GlobalState.instance.owner
+    let repo: String = GlobalState.instance.repo
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        App.api.repoIssues(owner: owner, repo: repo, page: 1) { (dataResponse) in
+            print(dataResponse.value)
+        }
     }
 
 

@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum GitHubRouter {
-    case repoIssues(owner: String, repo: String, parameter: Parameters)
+    case repoIssues(owner: String, repo: String, parameters: Parameters)
 }
 
 extension GitHubRouter: URLRequestConvertible {
@@ -26,6 +26,7 @@ extension GitHubRouter: URLRequestConvertible {
         let manager = Alamofire.SessionManager(configuration: configuration)
         return manager
     }()
+
     
     var method: HTTPMethod {
         switch self {
@@ -37,7 +38,7 @@ extension GitHubRouter: URLRequestConvertible {
     var path: String {
         switch self {
         case let .repoIssues(owner, repo, _):
-            return "/repos.\(owner)/\(repo)/issues"
+            return "/repos/\(owner)/\(repo)/issues"
         }
     }
     
@@ -50,8 +51,8 @@ extension GitHubRouter: URLRequestConvertible {
         }
         // Encoding
         switch self {
-        case let .repoIssues(_, _, parameter):
-            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameter)
+        case let .repoIssues(_, _, parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
         }
         return urlRequest
     }

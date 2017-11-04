@@ -17,6 +17,7 @@
 		4B73C00D1FA4A62300BF1A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B73C00B1FA4A62300BF1A4F /* LaunchScreen.storyboard */; };
 		4C766B05662882E9CF746CB8 /* Pods_codekit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65D2A6F29AB72E2BFCF636E /* Pods_codekit.framework */; };
 		DDA1E8081FAD95ED000472F4 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA1E8071FAD95ED000472F4 /* IssuesViewController.swift */; };
+		DDA1E80B1FAD9E17000472F4 /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA1E80A1FAD9E17000472F4 /* ReposViewController.swift */; };
 		DDEB07F51FAD7F3F003653AD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB07F41FAD7F3F003653AD /* Model.swift */; };
 		DDEB07F91FAD82A3003653AD /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB07F81FAD82A3003653AD /* GitHubAPI.swift */; };
 		DDEB07FF1FAD8311003653AD /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB07FE1FAD8311003653AD /* GitHubRouter.swift */; };
@@ -39,6 +40,7 @@
 		891B39DDB8B46442A3AD062B /* Pods-codekit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codekit.release.xcconfig"; path = "Pods/Target Support Files/Pods-codekit/Pods-codekit.release.xcconfig"; sourceTree = "<group>"; };
 		D65D2A6F29AB72E2BFCF636E /* Pods_codekit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codekit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDA1E8071FAD95ED000472F4 /* IssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		DDA1E80A1FAD9E17000472F4 /* ReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
 		DDEB07F41FAD7F3F003653AD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		DDEB07F81FAD82A3003653AD /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		DDEB07FE1FAD8311003653AD /* GitHubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRouter.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				4B73C0091FA4A62300BF1A4F /* Assets.xcassets */,
 				4B73C0021FA4A62300BF1A4F /* AppDelegate.swift */,
+				DDA1E8091FAD9DF8000472F4 /* View */,
 				DDA1E8061FAD8FCC000472F4 /* ViewController */,
 				DDEB07F61FAD7F45003653AD /* Model */,
 				4B1B6FB71FA4CAFE00DF84E8 /* Utility */,
@@ -130,10 +133,18 @@
 			isa = PBXGroup;
 			children = (
 				4B1B6FAF1FA4CA5A00DF84E8 /* LoginViewController.swift */,
-				DDEB08021FAD8DFB003653AD /* RepoViewController.swift */,
 				DDA1E8071FAD95ED000472F4 /* IssuesViewController.swift */,
+				DDEB08021FAD8DFB003653AD /* RepoViewController.swift */,
+				DDA1E80A1FAD9E17000472F4 /* ReposViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DDA1E8091FAD9DF8000472F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		DDEB07F61FAD7F45003653AD /* Model */ = {
@@ -148,8 +159,8 @@
 			isa = PBXGroup;
 			children = (
 				4B1B6FB31FA4CAC200DF84E8 /* API.swift */,
-				DDEB07FE1FAD8311003653AD /* GitHubRouter.swift */,
 				DDEB07F81FAD82A3003653AD /* GitHubAPI.swift */,
+				DDEB07FE1FAD8311003653AD /* GitHubRouter.swift */,
 				DDEB08001FAD892F003653AD /* DataRequest+Extension.swift */,
 			);
 			path = API;
@@ -290,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDA1E80B1FAD9E17000472F4 /* ReposViewController.swift in Sources */,
 				4B1B6FB01FA4CA5A00DF84E8 /* LoginViewController.swift in Sources */,
 				DDEB07FF1FAD8311003653AD /* GitHubRouter.swift in Sources */,
 				4B1B6FB61FA4CAF200DF84E8 /* GlobalState.swift in Sources */,

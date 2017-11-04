@@ -55,7 +55,7 @@ struct GitHubAPI: API {
     
     func repoIssues(owner: String, repo: String, page: Int, handler: @escaping IssuesResponseHandler) {
         let parameters: Parameters = ["page": page, "state": "all"]
-        GitHubRouter.manager.request(GitHubRouter.repoIssues(owner: owner, repo: repo, parameter: parameters)).responseSwiftyJSON { (dataResponse: DataResponse<JSON>) in
+        GitHubRouter.manager.request(GitHubRouter.repoIssues(owner: owner, repo: repo, parameters: parameters)).responseSwiftyJSON { (dataResponse: DataResponse<JSON>) in
             let result: DataResponse<[Model.Issue]> = dataResponse.map({ (json: JSON) -> [Model.Issue] in
                 return json.arrayValue.map({ (json: JSON) -> Model.Issue in
                     return Model.Issue(json: json)
