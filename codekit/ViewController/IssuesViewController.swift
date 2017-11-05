@@ -4,7 +4,6 @@
 //
 //  Created by 김기윤 on 04/11/2017.
 //  Copyright © 2017 yunari.me. All rights reserved.
-// App.api.repoIssues(owner: owner, repo: repo, page: 1) { (dataResponse) in
 
 
 import UIKit
@@ -36,8 +35,8 @@ class IssuesViewController: UIViewController, DataSourceRefreshable {
     var datasource: [Model.Issue] = []
     var needRefreshDatasource: Bool = false
     typealias Item = Model.Issue
+   
     let refreshControl = UIRefreshControl()
-    
     var page: Int = 1
     var canLoadMore: Bool = true
     var isLoading: Bool = false
@@ -56,6 +55,7 @@ class IssuesViewController: UIViewController, DataSourceRefreshable {
         super.viewDidLoad()
         setup()
     }
+    
 }
 
 extension IssuesViewController {
@@ -89,12 +89,14 @@ extension IssuesViewController {
     
     func dataLoaded(items: [Model.Issue]) {
         refreshDatasourceIfNeeded()
-        refreshControl.endRefreshing()
+        
         page += 1
         if items.isEmpty {
             canLoadMore = false
             loadMoreFooterView?.loadDone()
         }
+        
+        refreshControl.endRefreshing()
         dataSource.append(contentsOf: items)
         collectionView.reloadData()
     }
@@ -144,6 +146,7 @@ extension IssuesViewController: UICollectionViewDataSource  {
 /*UICollectionViewDelegate, UICollectionViewFlowLayout*/
 extension IssuesViewController: UICollectionViewDelegateFlowLayout {
 
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let data = dataSource[indexPath.item]
         estimateCell.configureCell(data: data)

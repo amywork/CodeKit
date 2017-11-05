@@ -50,20 +50,17 @@ extension RepoViewController {
         }
     }
     
-    @IBAction func enterButtonTapped(_ sender: UIButton) {
-        
-    }
-    
     @IBAction func unwindFromRepos(_ segue: UIStoryboardSegue) {
         guard let reposViewController = segue.source as? ReposViewController else { return }
         guard let (owner, repo) = reposViewController.selectedRepo else { return }
         ownerTextField.text = owner
         repoTextField.text = repo
+        GlobalState.instance.owner = owner
+        GlobalState.instance.repo = repo
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.0 ) {
             [weak self] in
             self?.performSegue(withIdentifier: "EnterRepoSegue", sender: nil)
         }
     }
-    
     
 }

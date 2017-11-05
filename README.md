@@ -1,7 +1,10 @@
 # RxSwift
-- 2017.10.26 ~ 2017.12.30
+- **2017.10 ~ 2017.12 (8w, 40h)**
+- [강사님 github](https://github.com/intmain)
 
-## 1주차
+## 1주차 (17.10.28 - 5h)
+- 핵심 기능 정의, 개발 환경 설정 (Cocoapod, 사용할 api 등)
+- 스위프트 고급 문법 설명
 
 ### 1-1. Handling Cocoapods
 - [Getting Started](https://guides.cocoapods.org/using/getting-started.html)
@@ -34,8 +37,10 @@ end
 ### 1-5. Handling Git
 - [Using Git with Terminal](https://github.com/codepath/ios_guides/wiki/Using-Git-with-Terminal)
 
-## 2주차
-- Github API를 통해, Issue Tracking App 만들기
+<hr>
+
+## 2주차 (17.11.04 - 5h)
+- Github API를 통해, Issue Tracking App 핵심 페이지 구성
 
 ### 2-1. 모델 구조체 및 유틸리티 구현
 - `struct Model`
@@ -57,51 +62,4 @@ end
 
 <hr>
 
-# 질문
-
-1. cellFromNib으로 가져온 cell을 통해 UICollectionViewDelegateFlowLayout 여기에서 estimatedSize를 구하는 것까지는 이해가 됐는데요, 여기서는 estimateCell로 사이즈를 구하고, 위에 콜렉션뷰에서 cellForItemAt에서는 cell = collectionView.dequeueReusableCell 그냥 요렇게 했는데 여기서는 estimateCell로 안해도 되는 이유가 무엇인가요??
-
-```
-extension IssueCell {
-    //cellFromNib을 호출할 때마다 nib에서 하나씩 Cell을 가져온다.
-    static var cellFromNib: IssueCell {
-        guard let cell = Bundle.main.loadNibNamed("IssueCell", owner: nil, options: nil)?.first as? IssueCell else { return IssueCell() }
-        return cell
-    }
-}
-```
-
-2. init(frame:)과 init(coder aDecoder: NSCoder) 두개 모두 구현하는 이유는 무엇인가요?
-
-3. loadNib() 부분과 setupNib() 부분 잘 모르겠어요 ㅠ.ㅠ
-
-```
-class LoadMoreFooterView: UICollectionReusableView {
-
-public func loadNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "LoadMoreFooterView", bundle: bundle)
-        guard let view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView else { return UIView() }
-        return view
-    }
-    
-override public init(frame: CGRect) {
-        super.init(frame: frame)
-        self.setupNib()
-    }
-    
-    // MARK: - NSCoding
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        self.setupNib()
-    }
-
-fileprivate func setupNib() {
-        let view = self.loadNib()
-        self.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        let bindings = ["view": view]
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[view]|", options:[], metrics:nil, views: bindings))
-        self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[view]|", options:[], metrics:nil, views: bindings))
-    }
-```
+## 3주차 (17.11.11 - 5h)

@@ -9,17 +9,9 @@
 import UIKit
 
 class ReposViewController: UIViewController {
-
     @IBOutlet weak var tableView: UITableView!
     let datasource:[(owner: String, repo: String)] = GlobalState.instance.repos
     var selectedRepo: (owner: String, repo: String)?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
 }
 
 let ReuseIdentifier: String = "RepoCell"
