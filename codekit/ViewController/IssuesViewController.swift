@@ -115,17 +115,16 @@ extension IssuesViewController {
     
     
     func loadMore(indexPath: IndexPath) {
-        guard indexPath.item == dataSource.count - 1 && !isLoading && canLoadMore else { return }
+        guard indexPath.item == dataSource.count - 10 && !isLoading && canLoadMore else { return }
         load()
     }
-    
-    /*
+
+
     func loadMore2() {
         guard !isLoading && canLoadMore else { return }
         load()
     }
-    */
-    
+
 }
 
 /*UICollectionViewDataSource*/
@@ -180,11 +179,12 @@ extension IssuesViewController: UICollectionViewDelegate, UIScrollViewDelegate {
         loadMore(indexPath: indexPath)
     }
 
-    /*
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y > collectionView.contentSize.height - (collectionView.frame.size.height) {
             loadMore2()
         }
     }
-    */
+
+
 }
