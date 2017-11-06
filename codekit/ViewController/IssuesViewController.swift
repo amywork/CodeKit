@@ -11,7 +11,7 @@ import Alamofire
 
 protocol DataSourceRefreshable: class {
     associatedtype Item
-    var datasource: [Item] { get set }
+    var dataSource: [Item] { get set }
     var needRefreshDatasource: Bool { get set }
 }
 
@@ -23,7 +23,7 @@ extension DataSourceRefreshable {
    
     func refreshDatasourceIfNeeded() {
         if needRefreshDatasource {
-            datasource = []
+            dataSource = []
             needRefreshDatasource = false
         }
     }
@@ -32,10 +32,8 @@ extension DataSourceRefreshable {
 class IssuesViewController: UIViewController, DataSourceRefreshable {
    
     /*DataSourceRefreshable*/
-    var datasource: [Model.Issue] = []
     var needRefreshDatasource: Bool = false
     typealias Item = Model.Issue
-   
     let refreshControl = UIRefreshControl()
     var page: Int = 1
     var canLoadMore: Bool = true
@@ -43,13 +41,15 @@ class IssuesViewController: UIViewController, DataSourceRefreshable {
     var loadMoreFooterView: LoadMoreFooterView?
     
     /*Property*/
-    let owner: String = GlobalState.instance.owner
-    let repo: String = GlobalState.instance.repo
+    lazy var owner: String = { return GlobalState.instance.owner }()
+    lazy var repo: String = { return GlobalState.instance.repo }()
     var dataSource: [Model.Issue] = []
+    
+    /*CollectionView*/
     fileprivate let estimateCell: IssueCell = IssueCell.cellFromNib
     @IBOutlet weak var collectionView: UICollectionView!
     
-
+    
     /*setup UI*/
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +60,14 @@ class IssuesViewController: UIViewController, DataSourceRefreshable {
 
 extension IssuesViewController {
     
+    @objc func refresh() {
+        page = 1
+        canLoadMore = true
+        loadMoreFooterView?.load()
+        setNeedRefreshDatasource()
+        load()
+    }
+    
     /*UI*/
     func setup(){
         collectionView.dataSource = self
@@ -69,12 +77,14 @@ extension IssuesViewController {
         collectionView.alwaysBounceVertical = true
         refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
         load()
+        loadMoreFooterView?.load()
     }
     
-    /*Data Load*/
+    /*Data Load - api.repoIssues*/
     func load() {
         guard isLoading == false else { return }
         isLoading = true
+        
         App.api.repoIssues(owner: owner, repo: repo, page: page) { [weak self] (dataResponse: DataResponse<[Model.Issue]>) in
             guard let weakSelf = self else { return }
             switch dataResponse.result {
@@ -82,12 +92,14 @@ extension IssuesViewController {
                 weakSelf.isLoading = false
                 weakSelf.dataLoaded(items: items)
             case .failure:
+                weakSelf.isLoading = false
                 break
             }
         }
     }
     
-    func dataLoaded(items: [Model.Issue]) {
+    /*Data Load - dataLoaded*/
+    func dataLoaded(items: [Item]) {
         refreshDatasourceIfNeeded()
         
         page += 1
@@ -101,13 +113,6 @@ extension IssuesViewController {
         collectionView.reloadData()
     }
     
-    @objc func refresh() {
-        page = 1
-        canLoadMore = true
-        loadMoreFooterView?.load()
-        setNeedRefreshDatasource()
-        load()
-    }
     
     func loadMore(indexPath: IndexPath) {
         guard indexPath.item == dataSource.count - 1 && !isLoading && canLoadMore else { return }
@@ -132,12 +137,14 @@ extension IssuesViewController: UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
+            assert(false, "Unexpected element kind")
             return UICollectionReusableView()
         case UICollectionElementKindSectionFooter:
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LoadMoreFooterView", for: indexPath) as? LoadMoreFooterView ?? LoadMoreFooterView()
-            return footer
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "LoadMoreFooterView", for: indexPath) as? LoadMoreFooterView ?? LoadMoreFooterView()
+            loadMoreFooterView = footerView
+            return footerView
         default:
-            assert(false, "unexpected element kind")
+            assert(false, "Unexpected element kind")
             return UICollectionReusableView()
         }
     }
