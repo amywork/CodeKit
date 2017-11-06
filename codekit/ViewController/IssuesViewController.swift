@@ -119,6 +119,13 @@ extension IssuesViewController {
         load()
     }
     
+    /*
+    func loadMore2() {
+        guard !isLoading && canLoadMore else { return }
+        load()
+    }
+    */
+    
 }
 
 /*UICollectionViewDataSource*/
@@ -134,6 +141,7 @@ extension IssuesViewController: UICollectionViewDataSource  {
         return cell
     }
     
+    //Reuse Supplementary View
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionElementKindSectionHeader:
@@ -150,7 +158,7 @@ extension IssuesViewController: UICollectionViewDataSource  {
     }
 }
 
-/*UICollectionViewDelegate, UICollectionViewFlowLayout*/
+/*Cell Size*/
 extension IssuesViewController: UICollectionViewDelegateFlowLayout {
 
     
@@ -165,11 +173,18 @@ extension IssuesViewController: UICollectionViewDelegateFlowLayout {
 }
 
 
-// 일정 스크롤에서 더 많이 로드하는 것
-extension IssuesViewController: UICollectionViewDelegate {
-    
+/*will Display*/
+extension IssuesViewController: UICollectionViewDelegate, UIScrollViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         loadMore(indexPath: indexPath)
     }
-    
+
+    /*
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y > collectionView.contentSize.height - (collectionView.frame.size.height) {
+            loadMore2()
+        }
+    }
+    */
 }
