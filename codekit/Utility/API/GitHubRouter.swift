@@ -9,14 +9,17 @@
 import Foundation
 import Alamofire
 
+/*--enum--*/
 enum GitHubRouter {
     case repoIssues(owner: String, repo: String, parameters: Parameters)
 }
 
 extension GitHubRouter: URLRequestConvertible {
    
+    /*--base URL String--*/
     static let baseURLString: String = "https://api.github.com"
    
+    /*--Responsible for creating and managing Request objects, as well as their underlying NSURLSession.--*/
     static let manager: Alamofire.SessionManager = {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 10
@@ -27,7 +30,7 @@ extension GitHubRouter: URLRequestConvertible {
         return manager
     }()
 
-    
+    /*--HTTP Method--*/
     var method: HTTPMethod {
         switch self {
         case .repoIssues:
@@ -35,6 +38,7 @@ extension GitHubRouter: URLRequestConvertible {
         }
     }
     
+    /*--URL Path--*/
     var path: String {
         switch self {
         case let .repoIssues(owner, repo, _):
@@ -42,14 +46,16 @@ extension GitHubRouter: URLRequestConvertible {
         }
     }
     
+    /*--URLRequest--*/
     func asURLRequest() throws -> URLRequest {
         let url = try GitHubRouter.baseURLString.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         urlRequest.httpMethod = method.rawValue
         if let token = GlobalState.instance.token, !token.isEmpty {
+            //Sets a value for a header field.
             urlRequest.setValue("token \(token)", forHTTPHeaderField: "Authorization")
         }
-        // Encoding
+        /*--Encoding--*/
         switch self {
         case let .repoIssues(_, _, parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
