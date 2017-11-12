@@ -9,6 +9,7 @@ import UIKit
 
 class IssuesViewController: ListViewController<IssueCell> {
    
+    override var cellName: String { return "IssueCell" }
     
     @IBOutlet var collectionView_: UICollectionView!
     
@@ -23,10 +24,6 @@ class IssuesViewController: ListViewController<IssueCell> {
     override func viewDidLoad() {
         api = App.api.repoIssues(owner: owner, repo: repo)
         super.viewDidLoad()
-    }
-    
-    override var cellName: String {
-        return "IssueCell"
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

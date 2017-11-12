@@ -3,8 +3,9 @@
 - [강사님 github](https://github.com/intmain)
 
 ## 1주차 (17.10.28 - 5h)
-- 핵심 기능 정의, 개발 환경 설정 (Cocoapod, 사용할 api 등)
-- 스위프트 고급 문법 설명
+- **Github Issue Tracking App** 핵심 기능 정의
+- 개발 환경 설정 (Cocoapod)
+- 스위프트 고급 문법 (Enum, Closure, 함수커링)
 
 ### 1-1. Handling Cocoapods
 - [Getting Started](https://guides.cocoapods.org/using/getting-started.html)
@@ -17,10 +18,10 @@
 target 'codekit' do
 
 use_frameworks!
-pod 'Alamofire', '~> 4.5'
+pod 'Alamofire',
 pod 'AlamofireImage’
 pod 'SwiftyJSON'
-pod 'OAuthSwift', '~> 1.1.2'
+pod 'OAuthSwift',
 
 end
 ```
@@ -46,7 +47,7 @@ end
 - `struct Model`
 - `final class GlobalState`
 - `struct App`, `protocol API`
-- `struct GitHubAPI: API` : OAuth 인증 후 UserDefault 이용한 토큰 저장 
+- `struct GitHubAPI: API` : OAuth 인증 후 UserDefault 토큰 저장 
 - `enum GitHubRouter`
 
 ### 2-2. ViewControllers
@@ -55,7 +56,7 @@ end
 - ReposViewController
 - IssuesViewController
 
-### 2-3. nib파일을 통한 cell및 footer view 구현
+### 2-3. xib파일을 통한 cell및 footer view 구현
 - IssueCell
 - LoadMoreFooterView (콜렉션뷰의 푸터뷰 구현)
 
@@ -63,3 +64,22 @@ end
 <hr>
 
 ## 3주차 (17.11.11 - 5h)
+- ViewController 추상화 작업 및 API 추가 구성 (이슈 상세 페이지 구현 및 코멘트 포스팅 기능 구현)
+
+### 3-1. API 및 GitHubRouter 추가 구성
+- `protocol API`
+- `enum GitHubRouter`
+
+### 3-2. ViewControllers (리스트뷰 추상화 작업)
+- ListViewController
+- IssuesViewController
+- IssueDetailViewController
+- CreateIssueViewController
+
+### 3-3. xib파일을 통한 header view 구현
+- IssueDetailHeaderView
+
+<hr>
+
+## 4주차 (17.11.18 - 5h)
+- 1~3주차 내용을 RxSwift로 재구현

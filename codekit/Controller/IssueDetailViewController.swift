@@ -51,7 +51,6 @@ class IssueDetailViewController: ListViewController<IssueCommentCell> {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -76,7 +75,6 @@ class IssueDetailViewController: ListViewController<IssueCommentCell> {
     override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         if headerSize == CGSize.zero {
             headerSize = IssueDetailHeaderView.headerSize(issue: issue, width: collectionView.frame.width)
-            
         }
         return headerSize
     }
@@ -159,7 +157,6 @@ extension IssueDetailViewController {
                 case .failure(let error):
                     print(error)
                 }
-                
             })
         case .closed:
             App.api.openIssue(owner: owner, repo: repo, number: issue.number, issue: issue, completionHandler: { [weak self] (dataResponse: DataResponse<Model.Issue>) in

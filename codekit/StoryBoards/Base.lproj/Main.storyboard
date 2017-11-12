@@ -94,21 +94,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vU-3t-lQL">
-                                <rect key="frame" x="139" y="539" width="96" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout github">
-                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="logoutButtonTapped:" destination="rsU-1h-bBD" eventType="touchUpInside" id="8Zr-0c-tFR"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJe-bu-TxW">
                                 <rect key="frame" x="16" y="208" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Enter">
+                                <state key="normal" title="Enter Repository">
                                     <color key="titleColor" red="1" green="0.1180555556" blue="0.30546975630000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -137,8 +127,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vU-3t-lQL">
+                                <rect key="frame" x="139" y="545" width="96" height="30"/>
+                                <state key="normal" title="Logout github">
+                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="logoutButtonTapped:" destination="rsU-1h-bBD" eventType="touchUpInside" id="8Zr-0c-tFR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7vU-3t-lQL" firstAttribute="centerX" secondItem="IHl-q1-FET" secondAttribute="centerX" id="Kcu-in-BUx"/>
+                            <constraint firstItem="IHl-q1-FET" firstAttribute="bottom" secondItem="7vU-3t-lQL" secondAttribute="bottom" constant="28" id="h6o-Sh-fW0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IHl-q1-FET"/>
                     </view>
                     <navigationItem key="navigationItem" title="Repo" id="5De-dd-nHu">
@@ -289,7 +292,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="3DD-DZ-itE" id="yUB-yC-VMK"/>
-                        <outlet property="collectionView_" destination="3DD-DZ-itE" id="Cum-Lf-bX6"/>
                         <segue destination="6mH-dZ-8ws" kind="show" identifier="ShowIssueDetailSegue" id="ECT-FW-trq"/>
                     </connections>
                 </viewController>
@@ -386,7 +388,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rru-kF-Jf8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2558" y="-783"/>
+            <point key="canvasLocation" x="2575" y="-783"/>
         </scene>
         <!--Create Issue-->
         <scene sceneID="Yhf-cn-Bfi">
