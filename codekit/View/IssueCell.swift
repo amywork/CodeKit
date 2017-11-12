@@ -7,22 +7,31 @@
 //
 
 import UIKit
-class IssueCell: UICollectionViewCell {
+
+protocol CellProtocol {
+    associatedtype Item
+    func configure(data: Item)
+    static var cellFromNib: Self { get }
+}
+
+final class IssueCell: UICollectionViewCell {
     @IBOutlet weak var stateButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentsLabel: UILabel!
     @IBOutlet weak var commentCountButton: UIButton!
 }
 
-extension IssueCell {
+extension IssueCell: CellProtocol {
+    typealias Item = Model.Issue
     
-    //cellFromNib을 호출할 때마다 NIB에서 하나씩 Cell을 가져온다.
     static var cellFromNib: IssueCell {
-        guard let cell = Bundle.main.loadNibNamed("IssueCell", owner: nil, options: nil)?.first as? IssueCell else { return IssueCell() }
+        guard let cell = Bundle.main.loadNibNamed("IssueCell", owner: nil, options: nil)?.first as? IssueCell else {
+            return IssueCell()
+        }
         return cell
     }
     
-    func configureCell(data issue: Model.Issue) {
+    func configure(data issue: Model.Issue) {
         titleLabel.text = issue.title
         let createdAt: String = issue.createdAt?.string(dateFormat: "dd MMM yyyy") ?? "-"
         contentsLabel.text = "#\(issue.number) \(issue.state.rawValue) on \(createdAt) by \(issue.user.login)"

@@ -9,7 +9,7 @@
 import UIKit
 
 class ReposViewController: UIViewController {
-    @IBOutlet weak var tableView: UITableView!
+   @IBOutlet weak var tableView: UITableView!
     let datasource:[(owner: String, repo: String)] = GlobalState.instance.repos
     var selectedRepo: (owner: String, repo: String)?
 }

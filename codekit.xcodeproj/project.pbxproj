@@ -15,6 +15,13 @@
 		4B73C0081FA4A62300BF1A4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B73C0061FA4A62300BF1A4F /* Main.storyboard */; };
 		4B73C00A1FA4A62300BF1A4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B73C0091FA4A62300BF1A4F /* Assets.xcassets */; };
 		4B73C00D1FA4A62300BF1A4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B73C00B1FA4A62300BF1A4F /* LaunchScreen.storyboard */; };
+		4BA5B40E1FB726F70037D373 /* IssueCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B40A1FB726F60037D373 /* IssueCommentCell.swift */; };
+		4BA5B40F1FB726F70037D373 /* IssueCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA5B40B1FB726F70037D373 /* IssueCommentCell.xib */; };
+		4BA5B4101FB726F70037D373 /* IssueDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B40C1FB726F70037D373 /* IssueDetailHeaderView.swift */; };
+		4BA5B4111FB726F70037D373 /* IssueDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BA5B40D1FB726F70037D373 /* IssueDetailHeaderView.xib */; };
+		4BA5B4131FB7C7220037D373 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B4121FB7C7220037D373 /* ListViewController.swift */; };
+		4BA5B4151FB7FA7C0037D373 /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B4141FB7FA7C0037D373 /* IssueDetailViewController.swift */; };
+		4BA5B4171FB7FA880037D373 /* CreateIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA5B4161FB7FA880037D373 /* CreateIssueViewController.swift */; };
 		4C766B05662882E9CF746CB8 /* Pods_codekit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65D2A6F29AB72E2BFCF636E /* Pods_codekit.framework */; };
 		DDA1E8081FAD95ED000472F4 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA1E8071FAD95ED000472F4 /* IssuesViewController.swift */; };
 		DDA1E80B1FAD9E17000472F4 /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA1E80A1FAD9E17000472F4 /* ReposViewController.swift */; };
@@ -23,7 +30,6 @@
 		DDA1E8181FADC0F6000472F4 /* LoadMoreFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA1E8161FADC0F6000472F4 /* LoadMoreFooterView.swift */; };
 		DDA1E8191FADC0F6000472F4 /* LoadMoreFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DDA1E8171FADC0F6000472F4 /* LoadMoreFooterView.xib */; };
 		DDEB07F51FAD7F3F003653AD /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB07F41FAD7F3F003653AD /* Model.swift */; };
-		DDEB07F91FAD82A3003653AD /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB07F81FAD82A3003653AD /* GitHubAPI.swift */; };
 		DDEB07FF1FAD8311003653AD /* GitHubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB07FE1FAD8311003653AD /* GitHubRouter.swift */; };
 		DDEB08011FAD892F003653AD /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB08001FAD892F003653AD /* DataRequest+Extension.swift */; };
 		DDEB08031FAD8DFB003653AD /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDEB08021FAD8DFB003653AD /* RepoViewController.swift */; };
@@ -40,6 +46,13 @@
 		4B73C0091FA4A62300BF1A4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4B73C00C1FA4A62300BF1A4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4B73C00E1FA4A62300BF1A4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BA5B40A1FB726F60037D373 /* IssueCommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueCommentCell.swift; sourceTree = "<group>"; };
+		4BA5B40B1FB726F70037D373 /* IssueCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueCommentCell.xib; sourceTree = "<group>"; };
+		4BA5B40C1FB726F70037D373 /* IssueDetailHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssueDetailHeaderView.swift; sourceTree = "<group>"; };
+		4BA5B40D1FB726F70037D373 /* IssueDetailHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IssueDetailHeaderView.xib; sourceTree = "<group>"; };
+		4BA5B4121FB7C7220037D373 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		4BA5B4141FB7FA7C0037D373 /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
+		4BA5B4161FB7FA880037D373 /* CreateIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIssueViewController.swift; sourceTree = "<group>"; };
 		69E62AF26BB638269A152942 /* Pods-codekit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codekit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-codekit/Pods-codekit.debug.xcconfig"; sourceTree = "<group>"; };
 		891B39DDB8B46442A3AD062B /* Pods-codekit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-codekit.release.xcconfig"; path = "Pods/Target Support Files/Pods-codekit/Pods-codekit.release.xcconfig"; sourceTree = "<group>"; };
 		D65D2A6F29AB72E2BFCF636E /* Pods_codekit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_codekit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,7 +63,6 @@
 		DDA1E8161FADC0F6000472F4 /* LoadMoreFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadMoreFooterView.swift; sourceTree = "<group>"; };
 		DDA1E8171FADC0F6000472F4 /* LoadMoreFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadMoreFooterView.xib; sourceTree = "<group>"; };
 		DDEB07F41FAD7F3F003653AD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		DDEB07F81FAD82A3003653AD /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		DDEB07FE1FAD8311003653AD /* GitHubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubRouter.swift; sourceTree = "<group>"; };
 		DDEB08001FAD892F003653AD /* DataRequest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
 		DDEB08021FAD8DFB003653AD /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
@@ -89,8 +101,8 @@
 		4B1B6FB71FA4CAFE00DF84E8 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				4B1B6FB51FA4CAF200DF84E8 /* GlobalState.swift */,
 				4B1B6FB11FA4CAB300DF84E8 /* APP.swift */,
+				4B1B6FB51FA4CAF200DF84E8 /* GlobalState.swift */,
 				DDEB07F71FAD8266003653AD /* API */,
 			);
 			path = Utility;
@@ -119,9 +131,9 @@
 			children = (
 				4B73C0091FA4A62300BF1A4F /* Assets.xcassets */,
 				4B73C0021FA4A62300BF1A4F /* AppDelegate.swift */,
-				DDA1E8091FAD9DF8000472F4 /* View */,
-				DDA1E8061FAD8FCC000472F4 /* ViewController */,
 				DDEB07F61FAD7F45003653AD /* Model */,
+				DDA1E8091FAD9DF8000472F4 /* View */,
+				DDA1E8061FAD8FCC000472F4 /* Controller */,
 				4B1B6FB71FA4CAFE00DF84E8 /* Utility */,
 				4B1B6FAE1FA4CA3900DF84E8 /* StoryBoards */,
 				4B73C00E1FA4A62300BF1A4F /* Info.plist */,
@@ -137,24 +149,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DDA1E8061FAD8FCC000472F4 /* ViewController */ = {
+		DDA1E8061FAD8FCC000472F4 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				4B1B6FAF1FA4CA5A00DF84E8 /* LoginViewController.swift */,
 				DDEB08021FAD8DFB003653AD /* RepoViewController.swift */,
 				DDA1E80A1FAD9E17000472F4 /* ReposViewController.swift */,
+				4BA5B4121FB7C7220037D373 /* ListViewController.swift */,
 				DDA1E8071FAD95ED000472F4 /* IssuesViewController.swift */,
+				4BA5B4141FB7FA7C0037D373 /* IssueDetailViewController.swift */,
+				4BA5B4161FB7FA880037D373 /* CreateIssueViewController.swift */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		DDA1E8091FAD9DF8000472F4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				DDA1E8161FADC0F6000472F4 /* LoadMoreFooterView.swift */,
-				DDA1E8171FADC0F6000472F4 /* LoadMoreFooterView.xib */,
-				DDA1E80E1FADACEA000472F4 /* IssueCell.swift */,
 				DDA1E80C1FADA6EF000472F4 /* IssueCell.xib */,
+				DDA1E80E1FADACEA000472F4 /* IssueCell.swift */,
+				4BA5B40B1FB726F70037D373 /* IssueCommentCell.xib */,
+				4BA5B40A1FB726F60037D373 /* IssueCommentCell.swift */,
+				4BA5B40D1FB726F70037D373 /* IssueDetailHeaderView.xib */,
+				4BA5B40C1FB726F70037D373 /* IssueDetailHeaderView.swift */,
+				DDA1E8171FADC0F6000472F4 /* LoadMoreFooterView.xib */,
+				DDA1E8161FADC0F6000472F4 /* LoadMoreFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -171,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				4B1B6FB31FA4CAC200DF84E8 /* API.swift */,
-				DDEB07F81FAD82A3003653AD /* GitHubAPI.swift */,
 				DDEB07FE1FAD8311003653AD /* GitHubRouter.swift */,
 				DDEB08001FAD892F003653AD /* DataRequest+Extension.swift */,
 			);
@@ -241,6 +259,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDA1E8191FADC0F6000472F4 /* LoadMoreFooterView.xib in Resources */,
+				4BA5B4111FB726F70037D373 /* IssueDetailHeaderView.xib in Resources */,
+				4BA5B40F1FB726F70037D373 /* IssueCommentCell.xib in Resources */,
 				4B73C00D1FA4A62300BF1A4F /* LaunchScreen.storyboard in Resources */,
 				4B73C00A1FA4A62300BF1A4F /* Assets.xcassets in Resources */,
 				4B73C0081FA4A62300BF1A4F /* Main.storyboard in Resources */,
@@ -321,13 +341,17 @@
 				4B1B6FB61FA4CAF200DF84E8 /* GlobalState.swift in Sources */,
 				4B1B6FB21FA4CAB300DF84E8 /* APP.swift in Sources */,
 				DDEB07F51FAD7F3F003653AD /* Model.swift in Sources */,
+				4BA5B4101FB726F70037D373 /* IssueDetailHeaderView.swift in Sources */,
 				4B1B6FB41FA4CAC200DF84E8 /* API.swift in Sources */,
 				DDEB08011FAD892F003653AD /* DataRequest+Extension.swift in Sources */,
 				DDA1E8181FADC0F6000472F4 /* LoadMoreFooterView.swift in Sources */,
-				DDEB07F91FAD82A3003653AD /* GitHubAPI.swift in Sources */,
+				4BA5B4151FB7FA7C0037D373 /* IssueDetailViewController.swift in Sources */,
 				DDEB08031FAD8DFB003653AD /* RepoViewController.swift in Sources */,
 				DDA1E80F1FADACEA000472F4 /* IssueCell.swift in Sources */,
+				4BA5B40E1FB726F70037D373 /* IssueCommentCell.swift in Sources */,
+				4BA5B4171FB7FA880037D373 /* CreateIssueViewController.swift in Sources */,
 				DDA1E8081FAD95ED000472F4 /* IssuesViewController.swift in Sources */,
+				4BA5B4131FB7C7220037D373 /* ListViewController.swift in Sources */,
 				4B73C0031FA4A62300BF1A4F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,7 +496,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yunari.me.codekit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -488,7 +512,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = yunari.me.codekit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
