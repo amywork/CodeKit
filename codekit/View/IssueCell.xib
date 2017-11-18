@@ -99,7 +99,7 @@
                 <outlet property="stateButton" destination="Acv-7w-6vN" id="adO-bR-vPJ"/>
                 <outlet property="titleLabel" destination="hTO-Og-Jge" id="dpy-n1-838"/>
             </connections>
-            <point key="canvasLocation" x="106.5" y="49"/>
+            <point key="canvasLocation" x="-188" y="-7"/>
         </collectionViewCell>
     </objects>
     <resources>
