@@ -8,13 +8,12 @@
 
 import UIKit
 
-@IBDesignable
+//@IBDesignable
 class IssueDetailHeaderView: UICollectionReusableView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var stateButton: UIButton!
     @IBOutlet weak var infoLabel: UILabel!
-    
     @IBOutlet weak var commentContainerView: UIView!
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var commentInfoLabel: UILabel!
@@ -45,7 +44,6 @@ class IssueDetailHeaderView: UICollectionReusableView {
     
     fileprivate func setupNib() {
         let view = self.loadNib()
-        
         self.addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
         let bindings = ["view": view]
