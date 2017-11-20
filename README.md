@@ -82,4 +82,12 @@ end
 <hr>
 
 ## 4주차 (17.11.18 - 5h)
+- [RxSwift 개념 및 문법 실습](https://github.com/younari/RxSwiftExample)
+- [ReactiveX](http://reactivex.io)
+- [rxmarbles](http://rxmarbles.com)
+
+<hr>
+
+## 5~8주차 (17.11.25 ~ 12.16, 20h)
 - 1~3주차 내용을 RxSwift로 재구현
+- RX용으로 repo 이동합니다. -> [RxCodekit](https://github.com/younari/RxSwiftExample)
