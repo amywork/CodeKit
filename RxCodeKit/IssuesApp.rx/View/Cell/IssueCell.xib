@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="IssueCell" id="osH-Fw-59X" customClass="IssueCell" customModule="GithubIssues_Rx" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qov-gU-RFh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                        <subviews>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4IZ-0J-YqC" userLabel="bottom line">
+                                <rect key="frame" x="48" y="99" width="327" height="1"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="lYE-dl-45k"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kN-zi-Ou5">
+                                <rect key="frame" x="16" y="9" width="21" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6Y8-6t-fBv"/>
+                                    <constraint firstAttribute="width" constant="21" id="aig-nm-R1n"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="ic_issues_open"/>
+                                <state key="selected" image="ic_issues_closed"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="9rf-Jl-i5c">
+                                <rect key="frame" x="45" y="8" width="314" height="84"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yvd-1e-k84">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Triggering Action" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOv-k7-F2C">
+                                                <rect key="frame" x="0.0" y="0.0" width="264" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="997" horizontalCompressionResistancePriority="997" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qgQ-6T-fyF">
+                                                <rect key="frame" x="264" y="0.0" width="50" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="4" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="0" image="ic_comment"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ns-eu-YqH">
+                                        <rect key="frame" x="0.0" y="36" width="314" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.46274509800000002" green="0.46274509800000002" blue="0.46274509800000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9rf-Jl-i5c" firstAttribute="top" secondItem="Qov-gU-RFh" secondAttribute="top" constant="8" id="8aj-fU-Zye"/>
+                            <constraint firstItem="6kN-zi-Ou5" firstAttribute="leading" secondItem="Qov-gU-RFh" secondAttribute="leading" constant="16" id="DCv-yV-BM0"/>
+                            <constraint firstAttribute="bottom" secondItem="9rf-Jl-i5c" secondAttribute="bottom" constant="8" id="UeF-Rm-jlA"/>
+                            <constraint firstItem="4IZ-0J-YqC" firstAttribute="leading" secondItem="Qov-gU-RFh" secondAttribute="leading" constant="48" id="eLz-Kb-BRV"/>
+                            <constraint firstItem="9rf-Jl-i5c" firstAttribute="top" secondItem="6kN-zi-Ou5" secondAttribute="bottom" constant="-22" id="ghu-XV-0Hf"/>
+                            <constraint firstAttribute="trailing" secondItem="9rf-Jl-i5c" secondAttribute="trailing" constant="16" id="hpW-aL-GJ5"/>
+                            <constraint firstItem="9rf-Jl-i5c" firstAttribute="leading" secondItem="6kN-zi-Ou5" secondAttribute="trailing" constant="8" id="jT1-VJ-skf"/>
+                            <constraint firstAttribute="trailing" secondItem="4IZ-0J-YqC" secondAttribute="trailing" id="oQ5-35-Nbx"/>
+                            <constraint firstAttribute="bottom" secondItem="4IZ-0J-YqC" secondAttribute="bottom" id="vay-uo-eIU"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Qov-gU-RFh" firstAttribute="leading" secondItem="osH-Fw-59X" secondAttribute="leading" id="GXB-1V-fNO"/>
+                <constraint firstAttribute="trailing" secondItem="Qov-gU-RFh" secondAttribute="trailing" id="V0g-yL-GvM"/>
+                <constraint firstAttribute="bottom" secondItem="Qov-gU-RFh" secondAttribute="bottom" id="VCA-qP-M3B"/>
+                <constraint firstItem="Qov-gU-RFh" firstAttribute="top" secondItem="osH-Fw-59X" secondAttribute="top" id="zZM-qT-8ne"/>
+            </constraints>
+            <connections>
+                <outlet property="commentCountButton" destination="qgQ-6T-fyF" id="4wW-LX-WtG"/>
+                <outlet property="contentLabel" destination="6ns-eu-YqH" id="QZO-Fw-OZ4"/>
+                <outlet property="stateButton" destination="6kN-zi-Ou5" id="EEs-5b-YGy"/>
+                <outlet property="titleLabel" destination="bOv-k7-F2C" id="C5S-Rc-LTd"/>
+            </connections>
+            <point key="canvasLocation" x="-137" y="-18"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_comment" width="16" height="16"/>
+        <image name="ic_issues_closed" width="21" height="21"/>
+        <image name="ic_issues_open" width="21" height="21"/>
+    </resources>
+</document>
