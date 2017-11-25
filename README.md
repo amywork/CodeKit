@@ -88,6 +88,5 @@ end
 
 <hr>
 
-## 5~8주차 (17.11.25 ~ 12.16, 20h)
-- 1~3주차 내용을 RxSwift로 재구현
-- RX용으로 repo 이동합니다. -> [RxCodekit](https://github.com/younari/RxSwiftExample)
+## 5~8주차 (~ 17.12.16, 20h)
+- 1~4주차 내용을 RxSwift로 재구현
