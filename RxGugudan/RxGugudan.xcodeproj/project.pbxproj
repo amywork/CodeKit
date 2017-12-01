@@ -78,10 +78,10 @@
 		D7697A291FCEBE70007F5B5D /* RxGugudan */ = {
 			isa = PBXGroup;
 			children = (
+				D7697A311FCEBE70007F5B5D /* Assets.xcassets */,
 				D7697A2A1FCEBE70007F5B5D /* AppDelegate.swift */,
 				D7697A2C1FCEBE70007F5B5D /* ViewController.swift */,
 				D7697A2E1FCEBE70007F5B5D /* Main.storyboard */,
-				D7697A311FCEBE70007F5B5D /* Assets.xcassets */,
 				D7697A331FCEBE70007F5B5D /* LaunchScreen.storyboard */,
 				D7697A361FCEBE70007F5B5D /* Info.plist */,
 			);

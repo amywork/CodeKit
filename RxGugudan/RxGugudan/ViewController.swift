@@ -25,9 +25,17 @@ class ViewController: UIViewController {
 extension ViewController {
     func bind() {
         textField.rx.text.orEmpty.asObservable()
-            /*
-             여기에 코드를 추가해보세요.
-             */
+            .map({ (str) -> String? in
+                guard let number = Int(str) else { return nil }
+                var result: String = ""
+                for i in 1...9 {
+                    result += "✏️ \(i) × \(number) = \(i*number) \n"
+                }
+                return result
+            })
             .bind(to: label.rx.text).disposed(by: disposeBag)
     }
 }
+
+
+
