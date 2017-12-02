@@ -64,7 +64,6 @@ extension Reactive where Base: UIView {
             UIView.animate(withDuration: 1, animations: {
                 self.base.transform = animation.transform(self.base.transform)
             }, completion: { (result) in
-                
                 observer.onNext(())
                 observer.onCompleted()
             })

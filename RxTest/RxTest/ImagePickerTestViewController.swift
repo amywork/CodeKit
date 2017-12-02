@@ -50,33 +50,8 @@ extension ImagePickerTestViewController {
         // observeOn & subscribeOn 을 통한 thread 관리
         uploadButton.rx.tap.asObservable()
             .flatMap{ [weak self] _ -> Observable<Void> in
-                return Observable<Void>.create({ (observer) -> Disposable in
-                    
-                    let alert = UIAlertController(
-                        title: "이미지 업로드",
-                        message: "이미지를 업로드 하시겠습니까?",
-                        preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(
-                        title: "YES",
-                        style: .cancel,
-                        handler: { (action) in
-                            observer.onNext(())
-                            observer.onCompleted()
-                    }))
-                    
-                    alert.addAction(UIAlertAction(
-                        title: "NO",
-                        style: .default))
-                    
-                    self?.present(alert, animated: true, completion: nil)
-                    
-                    return Disposables.create {
-                        
-                    }
-                })
-            }
-            .map{ [weak self] _ -> UIImage? in
+                UIAlertController.rx.showAlertTo(self, title: "업로드", message: "업로드 하시겠습니까?")
+            }.map{ [weak self] _ -> UIImage? in
                 return self?.imageView.image
             }.observeOn(SerialDispatchQueueScheduler(qos: .background))
             .flatMap { (image: UIImage?) -> Observable<Float> in
