@@ -19,6 +19,7 @@
 		D7A475351FD05D7000CFE8A8 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A475341FD05D7000CFE8A8 /* UIImagePickerController+Rx.swift */; };
 		DA2015CEB4A1BFFB13088FC2 /* Pods_RxTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5A01258F47BA2F793AFFBA /* Pods_RxTest.framework */; };
 		DDA681431FD295E2000F0A3D /* UIAlertRx.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA681421FD295E2000F0A3D /* UIAlertRx.swift */; };
+		DDA681451FD2A201000F0A3D /* DisposeBagController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA681441FD2A201000F0A3D /* DisposeBagController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		D7A475311FD05A2900CFE8A8 /* ImagePickerTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerTestViewController.swift; sourceTree = "<group>"; };
 		D7A475341FD05D7000CFE8A8 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
 		DDA681421FD295E2000F0A3D /* UIAlertRx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertRx.swift; sourceTree = "<group>"; };
+		DDA681441FD2A201000F0A3D /* DisposeBagController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisposeBagController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				D7A475311FD05A2900CFE8A8 /* ImagePickerTestViewController.swift */,
 				DDA681421FD295E2000F0A3D /* UIAlertRx.swift */,
 				D76953B41FD1A68200C7A006 /* GroupListViewController.swift */,
+				DDA681441FD2A201000F0A3D /* DisposeBagController.swift */,
 			);
 			path = RxTest;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				D7A475351FD05D7000CFE8A8 /* UIImagePickerController+Rx.swift in Sources */,
 				D76953B51FD1A68200C7A006 /* GroupListViewController.swift in Sources */,
 				DDA681431FD295E2000F0A3D /* UIAlertRx.swift in Sources */,
+				DDA681451FD2A201000F0A3D /* DisposeBagController.swift in Sources */,
 				D7A475321FD05A2900CFE8A8 /* ImagePickerTestViewController.swift in Sources */,
 				D7697A161FCC6C34007F5B5D /* AnimationViewController.swift in Sources */,
 				D7A4752A1FCF144100CFE8A8 /* URLToImageViewController.swift in Sources */,
