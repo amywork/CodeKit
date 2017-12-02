@@ -40,3 +40,37 @@ extension NinenineTableViewController {
             .bind(to: label.rx.text).disposed(by: disposeBag)
     }
 }
+
+// 나의 코드
+extension NinenineTableViewController {
+    func bind2() {
+        textField.rx.text.orEmpty.asObservable()
+            .map({ (str) -> String in
+                guard let number = Int(str) else { return "" }
+                var result: String = ""
+                for i in 1...9 {
+                    result += "✏️ \(i) × \(number) = \(i*number) \n"
+                }
+                return result
+            })
+            .bind(to: label.rx.text).disposed(by: disposeBag)
+    }
+}
+
+
+// 수강생 코드
+extension NinenineTableViewController {
+    func bind3() {
+        textField.rx.text.orEmpty.asObservable()
+            .map({ (str) -> String in
+                guard let number = Int(str) else { return "" }
+                var result: String = ""
+                let numArr = [1,2,3,4,5,6,7,8,9]
+                result = numArr.map({ (num) -> String in
+                    return "\(number) * \(num) = \(number*num)"
+                }).reduce("", {$0 + "\n" + $1})
+                return result
+            })
+            .bind(to: label.rx.text).disposed(by: disposeBag)
+    }
+}
