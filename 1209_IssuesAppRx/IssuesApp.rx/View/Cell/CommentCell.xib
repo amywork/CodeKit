@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CommentCell" id="8Fl-Em-Ojd" customClass="CommentCell" customModule="IssuesApp_rx">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLi-3O-WDm">
+                        <rect key="frame" x="8" y="0.0" width="312" height="90"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WFz-f7-XMP">
+                                <rect key="frame" x="0.0" y="8" width="40" height="40"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="LdG-ca-6UR"/>
+                                    <constraint firstAttribute="width" secondItem="WFz-f7-XMP" secondAttribute="height" multiplier="1:1" id="fDU-wI-ksO"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYw-MB-QBD">
+                                <rect key="frame" x="48" y="8" width="256" height="74"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdl-2H-JIa">
+                                        <rect key="frame" x="0.0" y="0.0" width="256" height="30.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" placeholderIntrinsicWidth="272" placeholderIntrinsicHeight="14.5" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hys-XJ-89h">
+                                                <rect key="frame" x="16" y="8" width="224" height="14.5"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="Hys-XJ-89h" secondAttribute="trailing" id="0k7-xI-XvT"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="Hys-XJ-89h" secondAttribute="bottom" id="5Dk-eq-asG"/>
+                                            <constraint firstItem="Hys-XJ-89h" firstAttribute="leading" secondItem="fdl-2H-JIa" secondAttribute="leadingMargin" id="Vnf-ad-f0s"/>
+                                            <constraint firstItem="Hys-XJ-89h" firstAttribute="top" secondItem="fdl-2H-JIa" secondAttribute="topMargin" id="z6h-Ie-u5t"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AMD-EY-fIg">
+                                        <rect key="frame" x="0.0" y="30.5" width="256" height="43.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="body" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AdX-hJ-2rr">
+                                                <rect key="frame" x="16" y="8" width="224" height="27.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="AdX-hJ-2rr" secondAttribute="bottom" id="GZS-Rk-Wke"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="AdX-hJ-2rr" secondAttribute="trailing" id="Uww-cc-NEh"/>
+                                            <constraint firstItem="AdX-hJ-2rr" firstAttribute="leading" secondItem="AMD-EY-fIg" secondAttribute="leadingMargin" id="VkN-FT-bEy"/>
+                                            <constraint firstItem="AdX-hJ-2rr" firstAttribute="top" secondItem="AMD-EY-fIg" secondAttribute="topMargin" id="tVt-qo-RZi"/>
+                                        </constraints>
+                                        <edgeInsets key="layoutMargins" top="8" left="16" bottom="8" right="16"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fdl-2H-JIa" secondAttribute="trailing" id="PhY-db-SRR"/>
+                                    <constraint firstItem="AMD-EY-fIg" firstAttribute="leading" secondItem="kYw-MB-QBD" secondAttribute="leading" id="Wrl-FW-11h"/>
+                                    <constraint firstItem="AMD-EY-fIg" firstAttribute="top" secondItem="fdl-2H-JIa" secondAttribute="bottom" id="cmW-z3-S93"/>
+                                    <constraint firstItem="fdl-2H-JIa" firstAttribute="leading" secondItem="kYw-MB-QBD" secondAttribute="leading" id="e0X-xF-Zia"/>
+                                    <constraint firstAttribute="trailing" secondItem="AMD-EY-fIg" secondAttribute="trailing" id="eQ4-a7-6ld"/>
+                                    <constraint firstAttribute="bottom" secondItem="AMD-EY-fIg" secondAttribute="bottom" id="oC8-If-D55"/>
+                                    <constraint firstItem="fdl-2H-JIa" firstAttribute="top" secondItem="kYw-MB-QBD" secondAttribute="top" id="sQG-7b-wS8"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="20" bottom="8" right="20"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WFz-f7-XMP" firstAttribute="leading" secondItem="HLi-3O-WDm" secondAttribute="leading" id="ETK-1b-2GR"/>
+                            <constraint firstItem="WFz-f7-XMP" firstAttribute="top" secondItem="HLi-3O-WDm" secondAttribute="top" constant="8" id="UON-W8-xg3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kYw-MB-QBD" secondAttribute="trailing" id="iuZ-z8-PgT"/>
+                            <constraint firstItem="kYw-MB-QBD" firstAttribute="leading" secondItem="WFz-f7-XMP" secondAttribute="trailing" constant="8" id="rpH-Hb-dcy"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WFz-f7-XMP" secondAttribute="bottom" constant="8" id="sYa-ZN-CdM"/>
+                            <constraint firstItem="kYw-MB-QBD" firstAttribute="top" secondItem="HLi-3O-WDm" secondAttribute="top" constant="8" id="w9o-vi-FtC"/>
+                            <constraint firstAttribute="bottom" secondItem="kYw-MB-QBD" secondAttribute="bottom" constant="8" id="zcP-hp-WR8"/>
+                        </constraints>
+                        <edgeInsets key="layoutMargins" top="8" left="-8" bottom="8" right="8"/>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="HLi-3O-WDm" firstAttribute="top" secondItem="8Fl-Em-Ojd" secondAttribute="top" id="O8U-X9-3SP"/>
+                <constraint firstAttribute="bottom" secondItem="HLi-3O-WDm" secondAttribute="bottom" id="SF1-0h-DpN"/>
+                <constraint firstAttribute="trailing" secondItem="HLi-3O-WDm" secondAttribute="trailing" id="jTX-Hy-6hh"/>
+                <constraint firstItem="HLi-3O-WDm" firstAttribute="leadingMargin" secondItem="8Fl-Em-Ojd" secondAttribute="leading" id="yzK-NF-AuV"/>
+            </constraints>
+            <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+            <connections>
+                <outlet property="bodyLabel" destination="AdX-hJ-2rr" id="awj-ve-eva"/>
+                <outlet property="commentContanerView" destination="AMD-EY-fIg" id="dfv-PW-ey7"/>
+                <outlet property="profileImageView" destination="WFz-f7-XMP" id="CPy-R2-vbb"/>
+                <outlet property="titleLabel" destination="Hys-XJ-89h" id="zKz-t1-zgr"/>
+            </connections>
+            <point key="canvasLocation" x="-70" y="73"/>
+        </collectionViewCell>
+    </objects>
+</document>

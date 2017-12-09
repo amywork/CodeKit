@@ -96,9 +96,11 @@ extension Model.Issue {
 }
 
 extension Model.Issue: Equatable {
+    
     static func ==(lhs: Model.Issue, rhs: Model.Issue) -> Bool {
         return lhs.id == rhs.id
     }
+    
 }
 
 extension UIColor {
