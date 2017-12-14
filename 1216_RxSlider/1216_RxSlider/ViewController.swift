@@ -12,14 +12,10 @@ import RxCocoa
 
 class ViewController: UIViewController {
 
-    
-    
     @IBOutlet weak var colorView: UIView!
-    
     @IBOutlet weak var redSlider: UISlider!
     @IBOutlet weak var greenSlider: UISlider!
     @IBOutlet weak var blueSlider: UISlider!
-    
     @IBOutlet weak var redValueLabel: UILabel!
     @IBOutlet weak var greenValueLabel: UILabel!
     @IBOutlet weak var blueValueLabel: UILabel!
@@ -41,6 +37,11 @@ class ViewController: UIViewController {
 extension ViewController {
    
     func bind() {
+        
+        redSlider.rx.value.asObservable().map { (float) -> UIColor in
+            return UIColor(red: CGFloat(float), green: self.greenValue, blue: self.blueValue, alpha: <#T##CGFloat#>)
+        }
+        
         
         redSlider.rx.value.subscribe(onNext: { value in
             self.redValueLabel.text = "\(value)"
@@ -67,4 +68,6 @@ extension ViewController {
         colorView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
     }
     
+    
 }
+
