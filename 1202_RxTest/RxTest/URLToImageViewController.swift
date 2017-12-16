@@ -20,6 +20,7 @@ class URLToImageViewController: UIViewController {
         super.viewDidLoad()
         bind()
     }
+    
 }
 
 extension URLToImageViewController {
@@ -86,3 +87,4 @@ struct ImageAPI {
     }
     
 }
+

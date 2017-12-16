@@ -31,6 +31,7 @@ class Loader <ModelType: ListableModel & Equatable> {
         }
     }
     
+    
     func bind() {
         datasourceIn.asObservable().skip(1)
             .do(onNext: { [weak self] (issues) in

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_216_ReactorKitCounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="zbY-i8-Pww">
+                                <rect key="frame" x="37.5" y="313.5" width="300" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QJF-XT-ekQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="-"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auo-px-mD9">
+                                        <rect key="frame" x="110" y="0.0" width="80" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1EE-f2-B33">
+                                        <rect key="frame" x="220" y="0.0" width="80" height="60"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        <state key="normal" title="+"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1EE-f2-B33" firstAttribute="leading" secondItem="auo-px-mD9" secondAttribute="trailing" constant="30" id="N5F-S5-CIe"/>
+                                </constraints>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vPj-Ji-Zom">
+                                <rect key="frame" x="169" y="325" width="37" height="37"/>
+                                <color key="color" name="alternateSelectedControlColor" catalog="System" colorSpace="catalog"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vPj-Ji-Zom" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="T93-ZV-r65"/>
+                            <constraint firstItem="zbY-i8-Pww" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="TIU-88-eOt"/>
+                            <constraint firstItem="zbY-i8-Pww" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cWs-v0-Mbd"/>
+                            <constraint firstItem="zbY-i8-Pww" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="o3W-6E-dHE"/>
+                            <constraint firstItem="vPj-Ji-Zom" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qDG-kA-eNh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="vPj-Ji-Zom" id="wfR-W5-VuA"/>
+                        <outlet property="countLabel" destination="auo-px-mD9" id="lQq-sc-FA2"/>
+                        <outlet property="minusButton" destination="QJF-XT-ekQ" id="lT4-pM-chz"/>
+                        <outlet property="plusButton" destination="1EE-f2-B33" id="m6b-DF-AY2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
