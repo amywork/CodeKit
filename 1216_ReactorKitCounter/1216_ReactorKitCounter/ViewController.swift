@@ -27,18 +27,20 @@ class ViewController: UIViewController, View {
     
     func bind(reactor: CounterViewReactor) {
         minusButton.rx.tap.map { CounterViewReactor.Action.decrease }
-        .bind(to: reactor.action).disposed(by: disposeBag)
+            .bind(to: reactor.action).disposed(by: disposeBag)
         
         plusButton.rx.tap.map { CounterViewReactor.Action.increase }
-        .bind(to: reactor.action).disposed(by: disposeBag)
+            .bind(to: reactor.action).disposed(by: disposeBag)
         
         reactor.state.map { $0.count }.map { "\($0)" }
-        .bind(to: countLabel.rx.text).disposed(by: disposeBag)
+            .bind(to: countLabel.rx.text).disposed(by: disposeBag)
         
         reactor.state.map { !$0.showIndicator }
-        .bind(to: activityIndicator.rx.isHidden).disposed(by: disposeBag)
+            .distinctUntilChanged()
+            .bind(to: activityIndicator.rx.isHidden).disposed(by: disposeBag)
         
         reactor.state.map { $0.showIndicator }
+            .distinctUntilChanged()
             .bind(to: countLabel.rx.isHidden).disposed(by: disposeBag)
         
     }
