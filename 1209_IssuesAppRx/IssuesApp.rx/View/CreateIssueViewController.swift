@@ -35,10 +35,11 @@ extension CreateIssueViewController {
         
         doneButton.rx.tap
             .flatMap { [weak self] _ -> Observable<Model.Issue> in
-                let title = self?.titleTextField.text ?? ""
-                let body = self?.bodyTextView.text ?? ""
+                guard let `self` = self else { return Observable.empty() }
+                let title = self.titleTextField.text ?? ""
+                let body = self.bodyTextView.text ?? ""
                 return App.api.postIssue(owner: GlobalState.instance.owner, repo: GlobalState.instance.repo, title: title, body: body)
-            }.map { _ in
+            }.map { _ -> Void in
                 return ()
             }.do(onNext: { [weak self] _ in
                 self?.dismiss(animated: true, completion: nil)

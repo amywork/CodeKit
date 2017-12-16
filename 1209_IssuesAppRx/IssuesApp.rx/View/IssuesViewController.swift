@@ -60,6 +60,7 @@ class IssuesViewController: UIViewController, SeguewayConstantable {
         case .presentToCreateIssueSegue:
             guard let navigationController = segue.destination as? UINavigationController, let viewController = navigationController.topViewController as? CreateIssueViewController else { return }
             viewController.reloadSubject = reloadSubject
+            // Create Issue 하고 refresh 하기 위함
             break
         }
     }
