@@ -37,11 +37,12 @@ class ViewController: UIViewController {
 extension ViewController {
    
     func bind() {
-        
-        redSlider.rx.value.asObservable().map { (float) -> UIColor in
-            return UIColor(red: CGFloat(float), green: self.greenValue, blue: self.blueValue, alpha: <#T##CGFloat#>)
+
+        let color = Observable<UIColor>.combineLatest(redSlider.rx.value, greenSlider.rx.value, blueSlider.rx.value) { (r,g,b) -> UIColor in
+            return UIColor(displayP3Red: CGFloat(r), green: CGFloat(g), blue: CGFloat(b), alpha: 1)
         }
         
+        color.bind(to: colorView.rx.backgroundColor).disposed(by: disposeBag)
         
         redSlider.rx.value.subscribe(onNext: { value in
             self.redValueLabel.text = "\(value)"
@@ -68,6 +69,13 @@ extension ViewController {
         colorView.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
     }
     
-    
 }
 
+
+extension Reactive where Base: UIView {
+    var backgroundColor: Binder<UIColor> {
+        return Binder(self.base) { view, color in
+            view.backgroundColor = color
+        }
+    }
+}

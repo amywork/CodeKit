@@ -125,8 +125,6 @@ let addTwo = add(value: 2)
 addTwo(10)
 add(value: 10)(2)
 
-
-
 /*tuple with named*/
 let nameTuple: (first: Int, second: Int) = (3,6)
 nameTuple.first
