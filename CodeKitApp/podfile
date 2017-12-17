@@ -1,0 +1,9 @@
+target 'CodeKitApp' do
+
+use_frameworks!
+pod 'Alamofire'
+pod 'AlamofireImage’
+pod 'SwiftyJSON'
+pod 'OAuthSwift'
+
+end
