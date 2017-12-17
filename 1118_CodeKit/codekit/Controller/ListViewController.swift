@@ -58,10 +58,6 @@ class ListViewController<CellType: UICollectionViewCell & CellProtocol>: UIViewC
         setup()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
     @objc func refresh() {
         page = 1
         canLoadMore = true

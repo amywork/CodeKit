@@ -5,21 +5,16 @@
 //  Created by Kimkeeyun on 17/12/2017.
 //  Copyright © 2017 yunari.me. All rights reserved.
 //
-
-import Foundation
-
 import Foundation
 import OAuthSwift
 import SwiftyJSON
 import Alamofire
 
 protocol API {
-    typealias IssueResponseHandler = () -> Void
-    typealias CommentResponseHandler = () -> Void
-    
+    typealias IssueResponsesHandler = (DataResponse<[Model.Issue]>) -> Void
     func getToken(handler: @escaping (() -> Void))
     func tokenRefresh(handler: @escaping (() -> Void))
-    
+    func repoIssues(owner: String, repo: String) -> (Int, @escaping IssueResponsesHandler) -> Void
 }
 
 struct GitHubAPI: API {
@@ -52,11 +47,25 @@ struct GitHubAPI: API {
                                success: { (credential, _, _) in
                                 let token = credential.oauthToken
                                 let refreshToken = credential.oauthRefreshToken
-                                GlobalState.instance.token = token
-                                GlobalState.instance.refreshToken = refreshToken
+                                GlobalState.shared.token = token
+                                GlobalState.shared.refreshToken = refreshToken
                                 handler()
         }) { (error) in
             print(error.localizedDescription)
+        }
+    }
+    
+    func repoIssues(owner: String, repo: String) -> (Int, @escaping IssueResponsesHandler) -> Void {
+        return { (page, handler) in
+            let parameters: Parameters = ["page": page, "state": "all"]
+            GitHubRouter.manager.request(GitHubRouter.repoIssues(owner: owner, repo: repo, parameters: parameters)).responseSwiftyJSON { (dataResponse: DataResponse<JSON>) in
+                let result = dataResponse.map({ (json: JSON) -> [Model.Issue] in
+                    return json.arrayValue.map {
+                        Model.Issue(json: $0)
+                    }
+                })
+                handler(result)
+            }
         }
     }
     

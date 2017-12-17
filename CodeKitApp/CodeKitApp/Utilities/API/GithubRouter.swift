@@ -45,11 +45,44 @@ extension GitHubRouter: URLRequestConvertible {
         }
     }
     
-    
-    func asURLRequest() throws -> URLRequest {
-        <#code#>
+    var path: String {
+        switch self {
+        case let .repoIssues(owner, repo, _):
+            return "/repos/\(owner)/\(repo)/issues"
+        case let .issueComment(owner, repo, number, _):
+            return "/repos/\(owner)/\(repo)/issues/\(number)/comments"
+        case let .createComment(owner, repo, number, _):
+            return "/repos/\(owner)/\(repo)/issues/\(number)/comments"
+        case let .editIssue(owner, repo, number, _):
+            return "/repos/\(owner)/\(repo)/issues/\(number)"
+        case let .createIssue(owner, repo, _):
+            return "/repos/\(owner)/\(repo)/issues"
+        }
     }
     
+    func asURLRequest() throws -> URLRequest {
+        let url = try GitHubRouter.baseURLString.asURL()
+        var urlRequest = URLRequest(url: url.appendingPathComponent(path))
+        urlRequest.httpMethod = method.rawValue
+        if let token = GlobalState.shared.token, !token.isEmpty {
+            urlRequest.setValue("token \(token)", forHTTPHeaderField: "Authorization")
+        }
+        
+        switch self {
+        case let .repoIssues(_, _, parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case let .issueComment(_, _, _, parameters):
+            urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
+        case let .createComment(_, _, _, parameters):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
+        case let .editIssue(_, _, _, parameters):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
+        case let .createIssue(_, _, parameters):
+            urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
+        }
+        
+        return urlRequest
+    }
     
     
 }

@@ -76,7 +76,6 @@ final class GlobalState {
         var repos: [[String:String]] =
             UserDefaults.standard.array(forKey: Constants.reposKey.rawValue) as? [[String : String]] ?? []
         repos.append(dic)
-        
         UserDefaults.standard.set(NSSet(array: repos).allObjects, forKey: Constants.reposKey.rawValue)
     }
     

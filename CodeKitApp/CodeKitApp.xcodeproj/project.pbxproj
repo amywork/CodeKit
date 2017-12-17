@@ -17,6 +17,19 @@
 		4B1661441FE6165D00DCDC78 /* GlobalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661431FE6165D00DCDC78 /* GlobalState.swift */; };
 		4B1661461FE62BAB00DCDC78 /* GithubRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661451FE62BAB00DCDC78 /* GithubRouter.swift */; };
 		4B1661481FE62BCA00DCDC78 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661471FE62BCA00DCDC78 /* Extensions.swift */; };
+		4B16614B1FE64AE600DCDC78 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16614A1FE64AE600DCDC78 /* LoginViewController.swift */; };
+		4B16614D1FE64BD600DCDC78 /* RepoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16614C1FE64BD600DCDC78 /* RepoViewController.swift */; };
+		4B16614F1FE64BDF00DCDC78 /* ReposViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B16614E1FE64BDF00DCDC78 /* ReposViewController.swift */; };
+		4B1661511FE64BE800DCDC78 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661501FE64BE800DCDC78 /* ListViewController.swift */; };
+		4B1661531FE64BF500DCDC78 /* IssuesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661521FE64BF500DCDC78 /* IssuesViewController.swift */; };
+		4B1661561FE64C0F00DCDC78 /* IssueDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661551FE64C0F00DCDC78 /* IssueDetailViewController.swift */; };
+		4B1661581FE64C1800DCDC78 /* CreateIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661571FE64C1800DCDC78 /* CreateIssueViewController.swift */; };
+		4B16615A1FE65C4200DCDC78 /* IssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1661591FE65C4200DCDC78 /* IssueCell.xib */; };
+		4B16615C1FE65C5200DCDC78 /* IssueCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B16615B1FE65C5200DCDC78 /* IssueCommentCell.xib */; };
+		4B16615E1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib */; };
+		4B1661601FE65C7000DCDC78 /* LoadMoreFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B16615F1FE65C7000DCDC78 /* LoadMoreFooterView.xib */; };
+		4B1661631FE65C9F00DCDC78 /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661621FE65C9F00DCDC78 /* IssueCell.swift */; };
+		4B1661651FE67E1C00DCDC78 /* LoadMoreFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661641FE67E1C00DCDC78 /* LoadMoreFooterView.swift */; };
 		63564727370AEAF7A6EFAF55 /* Pods_CodeKitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB87A561869974E49D43B9F /* Pods_CodeKitApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +47,19 @@
 		4B1661431FE6165D00DCDC78 /* GlobalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalState.swift; sourceTree = "<group>"; };
 		4B1661451FE62BAB00DCDC78 /* GithubRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRouter.swift; sourceTree = "<group>"; };
 		4B1661471FE62BCA00DCDC78 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4B16614A1FE64AE600DCDC78 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4B16614C1FE64BD600DCDC78 /* RepoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewController.swift; sourceTree = "<group>"; };
+		4B16614E1FE64BDF00DCDC78 /* ReposViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposViewController.swift; sourceTree = "<group>"; };
+		4B1661501FE64BE800DCDC78 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		4B1661521FE64BF500DCDC78 /* IssuesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssuesViewController.swift; sourceTree = "<group>"; };
+		4B1661551FE64C0F00DCDC78 /* IssueDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailViewController.swift; sourceTree = "<group>"; };
+		4B1661571FE64C1800DCDC78 /* CreateIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIssueViewController.swift; sourceTree = "<group>"; };
+		4B1661591FE65C4200DCDC78 /* IssueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueCell.xib; sourceTree = "<group>"; };
+		4B16615B1FE65C5200DCDC78 /* IssueCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueCommentCell.xib; sourceTree = "<group>"; };
+		4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailHeaderCell.xib; sourceTree = "<group>"; };
+		4B16615F1FE65C7000DCDC78 /* LoadMoreFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreFooterView.xib; sourceTree = "<group>"; };
+		4B1661621FE65C9F00DCDC78 /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
+		4B1661641FE67E1C00DCDC78 /* LoadMoreFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreFooterView.swift; sourceTree = "<group>"; };
 		83BDF5428060BFA178EB2F70 /* Pods-CodeKitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeKitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeKitApp/Pods-CodeKitApp.release.xcconfig"; sourceTree = "<group>"; };
 		BFB87A561869974E49D43B9F /* Pods_CodeKitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeKitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -76,6 +102,8 @@
 				4B1661291FE6119700DCDC78 /* AppDelegate.swift */,
 				4B1661411FE6162600DCDC78 /* Model */,
 				4B1661421FE6162E00DCDC78 /* Utilities */,
+				4B1661541FE64BF900DCDC78 /* ViewControllers */,
+				4B1661611FE65C7D00DCDC78 /* View+XIB */,
 				4B16612D1FE6119700DCDC78 /* Main.storyboard */,
 				4B1661321FE6119700DCDC78 /* LaunchScreen.storyboard */,
 			);
@@ -108,6 +136,33 @@
 				4B1661471FE62BCA00DCDC78 /* Extensions.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		4B1661541FE64BF900DCDC78 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4B16614A1FE64AE600DCDC78 /* LoginViewController.swift */,
+				4B16614C1FE64BD600DCDC78 /* RepoViewController.swift */,
+				4B16614E1FE64BDF00DCDC78 /* ReposViewController.swift */,
+				4B1661501FE64BE800DCDC78 /* ListViewController.swift */,
+				4B1661521FE64BF500DCDC78 /* IssuesViewController.swift */,
+				4B1661551FE64C0F00DCDC78 /* IssueDetailViewController.swift */,
+				4B1661571FE64C1800DCDC78 /* CreateIssueViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4B1661611FE65C7D00DCDC78 /* View+XIB */ = {
+			isa = PBXGroup;
+			children = (
+				4B1661621FE65C9F00DCDC78 /* IssueCell.swift */,
+				4B1661591FE65C4200DCDC78 /* IssueCell.xib */,
+				4B16615B1FE65C5200DCDC78 /* IssueCommentCell.xib */,
+				4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib */,
+				4B1661641FE67E1C00DCDC78 /* LoadMoreFooterView.swift */,
+				4B16615F1FE65C7000DCDC78 /* LoadMoreFooterView.xib */,
+			);
+			path = "View+XIB";
 			sourceTree = "<group>";
 		};
 		CF8FE066E7471B41E48D2260 /* Frameworks */ = {
@@ -192,6 +247,10 @@
 				4B1661341FE6119700DCDC78 /* LaunchScreen.storyboard in Resources */,
 				4B1661311FE6119700DCDC78 /* Assets.xcassets in Resources */,
 				4B16612F1FE6119700DCDC78 /* Main.storyboard in Resources */,
+				4B16615E1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib in Resources */,
+				4B1661601FE65C7000DCDC78 /* LoadMoreFooterView.xib in Resources */,
+				4B16615A1FE65C4200DCDC78 /* IssueCell.xib in Resources */,
+				4B16615C1FE65C5200DCDC78 /* IssueCommentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,10 +321,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B1661651FE67E1C00DCDC78 /* LoadMoreFooterView.swift in Sources */,
+				4B1661581FE64C1800DCDC78 /* CreateIssueViewController.swift in Sources */,
+				4B1661531FE64BF500DCDC78 /* IssuesViewController.swift in Sources */,
 				4B1661401FE6132900DCDC78 /* Model.swift in Sources */,
 				4B1661461FE62BAB00DCDC78 /* GithubRouter.swift in Sources */,
+				4B16614F1FE64BDF00DCDC78 /* ReposViewController.swift in Sources */,
+				4B1661631FE65C9F00DCDC78 /* IssueCell.swift in Sources */,
+				4B1661561FE64C0F00DCDC78 /* IssueDetailViewController.swift in Sources */,
+				4B16614D1FE64BD600DCDC78 /* RepoViewController.swift in Sources */,
 				4B1661441FE6165D00DCDC78 /* GlobalState.swift in Sources */,
+				4B1661511FE64BE800DCDC78 /* ListViewController.swift in Sources */,
 				4B16613C1FE6125900DCDC78 /* APP.swift in Sources */,
+				4B16614B1FE64AE600DCDC78 /* LoginViewController.swift in Sources */,
 				4B16613E1FE6128200DCDC78 /* API.swift in Sources */,
 				4B16612A1FE6119700DCDC78 /* AppDelegate.swift in Sources */,
 				4B1661481FE62BCA00DCDC78 /* Extensions.swift in Sources */,
