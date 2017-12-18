@@ -25,5 +25,14 @@ class IssuesViewController: ListViewController<IssueCell> {
         api = App.api.repoIssues(owner: owner, repo: repo)
         super.viewDidLoad()
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = self.collectionView.indexPathsForSelectedItems?.first,
+            let viewController = segue.destination as? IssueDetailViewController {
+            let issue = dataSource[indexPath.item]
+            viewController.issue = issue
+        }
+    }
 
 }

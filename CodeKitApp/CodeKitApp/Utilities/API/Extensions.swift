@@ -22,7 +22,8 @@ enum BackendError: Error {
 
 
 extension DataRequest {
-    @discardableResult
+  
+    //@discardableResult
     public func responseSwiftyJSON(_ completionHandler: @escaping (DataResponse<JSON>) -> Void) -> Self {
         let responseSerializer = DataResponseSerializer<JSON> { request, response, data, error in
             guard error == nil else {
@@ -49,6 +50,7 @@ extension DataRequest {
         }
         return response(responseSerializer: responseSerializer, completionHandler: completionHandler)
     }
+    
     static func errorMessage(_ response: HTTPURLResponse?, error: Error?, data: Data?) {
         debugPrint("status: \(response?.statusCode ?? -1), error message:\(error.debugDescription)")
     }

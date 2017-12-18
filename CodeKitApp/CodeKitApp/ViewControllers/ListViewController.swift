@@ -153,7 +153,7 @@ class ListViewController<CellType: UICollectionViewCell & CellProtocol> : UIView
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let data = dataSource[indexPath.item]
         estimateCell.configureCell(data: data)
-        let targetSize = CGSize(width: collectionView.frame.size.width, height: 200)
+        let targetSize = CGSize(width: collectionView.frame.size.width, height: 60)
         let estimatedSize = estimateCell.contentView.systemLayoutSizeFitting(targetSize, withHorizontalFittingPriority: UILayoutPriority.required, verticalFittingPriority: UILayoutPriority.defaultLow)
         return estimatedSize
     }

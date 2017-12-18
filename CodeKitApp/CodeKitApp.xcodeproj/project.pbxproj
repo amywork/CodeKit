@@ -26,10 +26,12 @@
 		4B1661581FE64C1800DCDC78 /* CreateIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661571FE64C1800DCDC78 /* CreateIssueViewController.swift */; };
 		4B16615A1FE65C4200DCDC78 /* IssueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B1661591FE65C4200DCDC78 /* IssueCell.xib */; };
 		4B16615C1FE65C5200DCDC78 /* IssueCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B16615B1FE65C5200DCDC78 /* IssueCommentCell.xib */; };
-		4B16615E1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib */; };
+		4B16615E1FE65C5F00DCDC78 /* IssueDetailHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderView.xib */; };
 		4B1661601FE65C7000DCDC78 /* LoadMoreFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4B16615F1FE65C7000DCDC78 /* LoadMoreFooterView.xib */; };
 		4B1661631FE65C9F00DCDC78 /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661621FE65C9F00DCDC78 /* IssueCell.swift */; };
 		4B1661651FE67E1C00DCDC78 /* LoadMoreFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1661641FE67E1C00DCDC78 /* LoadMoreFooterView.swift */; };
+		4B4437281FE74FE40036F20D /* IssueDetailHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4437271FE74FE40036F20D /* IssueDetailHeaderView.swift */; };
+		4B44372A1FE755130036F20D /* IssueCommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B4437291FE755130036F20D /* IssueCommentCell.swift */; };
 		63564727370AEAF7A6EFAF55 /* Pods_CodeKitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFB87A561869974E49D43B9F /* Pods_CodeKitApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +58,12 @@
 		4B1661571FE64C1800DCDC78 /* CreateIssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIssueViewController.swift; sourceTree = "<group>"; };
 		4B1661591FE65C4200DCDC78 /* IssueCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueCell.xib; sourceTree = "<group>"; };
 		4B16615B1FE65C5200DCDC78 /* IssueCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueCommentCell.xib; sourceTree = "<group>"; };
-		4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailHeaderCell.xib; sourceTree = "<group>"; };
+		4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IssueDetailHeaderView.xib; sourceTree = "<group>"; };
 		4B16615F1FE65C7000DCDC78 /* LoadMoreFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadMoreFooterView.xib; sourceTree = "<group>"; };
 		4B1661621FE65C9F00DCDC78 /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
 		4B1661641FE67E1C00DCDC78 /* LoadMoreFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadMoreFooterView.swift; sourceTree = "<group>"; };
+		4B4437271FE74FE40036F20D /* IssueDetailHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueDetailHeaderView.swift; sourceTree = "<group>"; };
+		4B4437291FE755130036F20D /* IssueCommentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCommentCell.swift; sourceTree = "<group>"; };
 		83BDF5428060BFA178EB2F70 /* Pods-CodeKitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodeKitApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-CodeKitApp/Pods-CodeKitApp.release.xcconfig"; sourceTree = "<group>"; };
 		BFB87A561869974E49D43B9F /* Pods_CodeKitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CodeKitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -157,8 +161,10 @@
 			children = (
 				4B1661621FE65C9F00DCDC78 /* IssueCell.swift */,
 				4B1661591FE65C4200DCDC78 /* IssueCell.xib */,
+				4B4437291FE755130036F20D /* IssueCommentCell.swift */,
 				4B16615B1FE65C5200DCDC78 /* IssueCommentCell.xib */,
-				4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib */,
+				4B4437271FE74FE40036F20D /* IssueDetailHeaderView.swift */,
+				4B16615D1FE65C5F00DCDC78 /* IssueDetailHeaderView.xib */,
 				4B1661641FE67E1C00DCDC78 /* LoadMoreFooterView.swift */,
 				4B16615F1FE65C7000DCDC78 /* LoadMoreFooterView.xib */,
 			);
@@ -247,7 +253,7 @@
 				4B1661341FE6119700DCDC78 /* LaunchScreen.storyboard in Resources */,
 				4B1661311FE6119700DCDC78 /* Assets.xcassets in Resources */,
 				4B16612F1FE6119700DCDC78 /* Main.storyboard in Resources */,
-				4B16615E1FE65C5F00DCDC78 /* IssueDetailHeaderCell.xib in Resources */,
+				4B16615E1FE65C5F00DCDC78 /* IssueDetailHeaderView.xib in Resources */,
 				4B1661601FE65C7000DCDC78 /* LoadMoreFooterView.xib in Resources */,
 				4B16615A1FE65C4200DCDC78 /* IssueCell.xib in Resources */,
 				4B16615C1FE65C5200DCDC78 /* IssueCommentCell.xib in Resources */,
@@ -324,6 +330,7 @@
 				4B1661651FE67E1C00DCDC78 /* LoadMoreFooterView.swift in Sources */,
 				4B1661581FE64C1800DCDC78 /* CreateIssueViewController.swift in Sources */,
 				4B1661531FE64BF500DCDC78 /* IssuesViewController.swift in Sources */,
+				4B44372A1FE755130036F20D /* IssueCommentCell.swift in Sources */,
 				4B1661401FE6132900DCDC78 /* Model.swift in Sources */,
 				4B1661461FE62BAB00DCDC78 /* GithubRouter.swift in Sources */,
 				4B16614F1FE64BDF00DCDC78 /* ReposViewController.swift in Sources */,
@@ -336,6 +343,7 @@
 				4B16614B1FE64AE600DCDC78 /* LoginViewController.swift in Sources */,
 				4B16613E1FE6128200DCDC78 /* API.swift in Sources */,
 				4B16612A1FE6119700DCDC78 /* AppDelegate.swift in Sources */,
+				4B4437281FE74FE40036F20D /* IssueDetailHeaderView.swift in Sources */,
 				4B1661481FE62BCA00DCDC78 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
