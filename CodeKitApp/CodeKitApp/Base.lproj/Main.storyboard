@@ -221,7 +221,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i8J-9H-JC1">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="i8J-9H-JC1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="77g-ow-kfa">
@@ -260,7 +260,7 @@
                     <connections>
                         <outlet property="collectionView" destination="i8J-9H-JC1" id="WAe-et-iBZ"/>
                         <outlet property="collectionView_" destination="i8J-9H-JC1" id="YUE-LE-KZe"/>
-                        <segue destination="v65-y1-DmT" kind="show" identifier="ShowIssueDetailSegue" id="fBp-Jg-vT4"/>
+                        <segue destination="v65-y1-DmT" kind="show" identifier="ShowIssueDetailSegue" id="29I-uy-YBg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5MW-d2-EKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -310,6 +310,9 @@
                                         <state key="normal" title="Send">
                                             <color key="titleColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="sendButtonTapped:" destination="v65-y1-DmT" eventType="touchUpInside" id="VmT-3c-zNy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -343,6 +346,7 @@
                     <navigationItem key="navigationItem" title="Issue Detail" id="guA-uW-a2Q"/>
                     <connections>
                         <outlet property="collectionView" destination="8y4-Hw-ibI" id="jBu-z4-AVG"/>
+                        <outlet property="commentTextField" destination="ghQ-jO-jLI" id="5bp-zy-SeR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mO-NP-VaK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -490,7 +494,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create New Issue" id="tR5-hl-J1A">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="euG-Ho-0jM"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="DoC-4l-7li"/>
+                        <barButtonItem key="rightBarButtonItem" title="Share" id="DoC-4l-7li"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhD-WU-iyc" userLabel="First Responder" sceneMemberID="firstResponder"/>

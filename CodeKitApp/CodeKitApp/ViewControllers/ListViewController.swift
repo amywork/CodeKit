@@ -158,5 +158,8 @@ class ListViewController<CellType: UICollectionViewCell & CellProtocol> : UIView
         return estimatedSize
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
     
 }

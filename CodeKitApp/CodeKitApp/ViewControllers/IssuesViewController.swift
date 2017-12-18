@@ -26,6 +26,9 @@ class IssuesViewController: ListViewController<IssueCell> {
         super.viewDidLoad()
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "ShowIssueDetailSegue", sender: nil)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let indexPath = self.collectionView.indexPathsForSelectedItems?.first,
