@@ -38,8 +38,13 @@ extension IssueCell: CellProtocol {
         contentsLabel.text = "#\(issue.number) \(issue.state.rawValue) on \(createdAt) by \(issue.user.login)"
         
         stateButton.isSelected = issue.state == .closed
+        stateButton.setTitle(Model.Issue.State.open.rawValue, for: .normal)
+        stateButton.setBackgroundImage(Model.Issue.State.open.color.toImage(), for: .normal)
+        stateButton.setTitle(Model.Issue.State.closed.rawValue, for: .selected)
+        stateButton.setBackgroundImage(Model.Issue.State.closed.color.toImage(), for: .selected)
         
-        commentCountButton.setTitle("\(issue.comments)", for: .normal)
+        
+        commentCountButton.setTitle("💬\(issue.comments)", for: .normal)
         let commentCountHidden: Bool = issue.comments == 0
         commentCountButton.alpha = commentCountHidden ? 0 : 1
         
