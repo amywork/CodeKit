@@ -54,6 +54,8 @@ extension Model.Issue {
     
 }
 
+
+
 extension Model.Issue : Equatable {
   
     static func ==(lhs: Model.Issue, rhs: Model.Issue) -> Bool {
@@ -98,9 +100,9 @@ extension Model.Issue.State {
     var color: UIColor {
         switch self {
         case .open:
-            return UIColor.red
+            return UIColor(red: 131/255, green: 189/255, blue: 71/255, alpha: 1)
         case .closed:
-            return UIColor.green
+            return UIColor(red: 71/255, green: 71/255, blue: 71/255, alpha: 1)
         }
     }
 }

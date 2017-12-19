@@ -31,7 +31,6 @@ extension GitHubRouter: URLRequestConvertible {
         return manager
     }()
 
-    
     var method: HTTPMethod {
         switch self {
         case .repoIssues,

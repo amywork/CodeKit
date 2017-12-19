@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class LoadMoreFooterView: UICollectionReusableView {
 
     @IBOutlet var activityIndicatorView: UIActivityIndicatorView!
@@ -25,8 +24,7 @@ class LoadMoreFooterView: UICollectionReusableView {
     }
     
     public func loadNib() -> UIView {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "LoadMoreFooterView", bundle: bundle)
+        let nib = UINib(nibName: "LoadMoreFooterView", bundle: nil)
         guard let view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView else { return UIView() }
         return view
     }

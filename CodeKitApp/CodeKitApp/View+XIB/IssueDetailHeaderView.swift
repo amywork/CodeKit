@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamofireImage
 
 class IssueDetailHeaderView: UICollectionReusableView {
     
@@ -19,17 +18,27 @@ class IssueDetailHeaderView: UICollectionReusableView {
     @IBOutlet weak var commentInfoLabel: UILabel!
     @IBOutlet weak var commentBodyLabel: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setup()
+        print("awakeFromNib")
+    }
+    
     public func loadNib() -> UIView {
-        guard let cell = Bundle.main.loadNibNamed("IssueDetailHeaderView", owner: nil, options: nil)?.first as? IssueDetailHeaderView else { return IssueDetailHeaderView() }
-        return cell
+        let nib = UINib(nibName: "IssueDetailHeaderView", bundle: nil)
+        guard let view = nib.instantiate(withOwner: self, options: nil)[0] as? UIView else { return UIView() }
+        return view
     }
     
     override public init(frame: CGRect) {
+        print("override public init(frame: CGRect) {")
         super.init(frame: frame)
         self.setupNib()
     }
     
+    // MARK: - NSCoding
     required public init?(coder aDecoder: NSCoder) {
+        print("required public init?(coder aDecoder: NSCoder)")
         super.init(coder: aDecoder)
         self.setupNib()
     }
@@ -44,22 +53,18 @@ class IssueDetailHeaderView: UICollectionReusableView {
     }
     
     static let estimateSizeCell: IssueDetailHeaderView = IssueDetailHeaderView()
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setup()
-    }
 }
 
+// MARK: - setup
 extension IssueDetailHeaderView {
     func setup() {
         stateButton.clipsToBounds = true
         stateButton.layer.cornerRadius = 2
         
         stateButton.setTitle(Model.Issue.State.open.rawValue, for: .normal)
-        //stateButton.setBackgroundImage(Model.Issue.State.open.color.toImage(), for: .normal)
+        stateButton.setBackgroundImage(Model.Issue.State.open.color.toImage(), for: .normal)
         stateButton.setTitle(Model.Issue.State.closed.rawValue, for: .selected)
-        //stateButton.setBackgroundImage(Model.Issue.State.closed.color.toImage(), for: .selected)
+        stateButton.setBackgroundImage(Model.Issue.State.closed.color.toImage(), for: .selected)
         
         avatarImageView.clipsToBounds = true
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.midX
@@ -70,6 +75,7 @@ extension IssueDetailHeaderView {
         commentContainerView.layer.borderWidth = 1
         
     }
+    
     static func headerSize(issue: Model.Issue, width: CGFloat) -> CGSize {
         
         IssueDetailHeaderView.estimateSizeCell.update(data: issue)
@@ -87,6 +93,7 @@ extension IssueDetailHeaderView {
 }
 
 extension IssueDetailHeaderView {
+    
     func update(data: Model.Issue, withImage: Bool = true) {
         
         let createdAt = data.createdAt?.string(dateFormat: "dd MMM yyyy") ?? "-"
@@ -103,3 +110,4 @@ extension IssueDetailHeaderView {
     }
     
 }
+
