@@ -13,11 +13,13 @@ import Alamofire
 protocol API {
     typealias IssueResponsesHandler = (DataResponse<[Model.Issue]>) -> Void
     typealias CommentResponsesHandler = (DataResponse<[Model.Comment]>) -> Void
+    func repoIssues(owner: String, repo: String) -> (Int, @escaping IssueResponsesHandler) -> Void
+    func issueComments(owner: String, repo: String, number: Int) -> (Int, @escaping CommentResponsesHandler) -> Void
+
     func getToken(handler: @escaping (() -> Void))
     func tokenRefresh(handler: @escaping (() -> Void))
-    func repoIssues(owner: String, repo: String) -> (Int, @escaping IssueResponsesHandler) -> Void
+    
     func createIssue(owner: String, repo: String, title: String, body: String, completionHandler: @escaping (DataResponse<Model.Issue>) -> Void)
-    func issueComments(owner: String, repo: String, number: Int) -> (Int, @escaping CommentResponsesHandler) -> Void
     func createComment(owner: String, repo: String, number: Int, comment: String, completionHandler: @escaping (DataResponse<Model.Comment>) -> Void)
     func openIssue(owner: String, repo: String, number: Int, issue: Model.Issue, completionHandler: @escaping (DataResponse<Model.Issue>) -> Void)
     func closeIssue(owner: String, repo: String, number: Int, issue: Model.Issue, completionHandler: @escaping (DataResponse<Model.Issue>) -> Void)

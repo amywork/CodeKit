@@ -347,6 +347,7 @@
                     <connections>
                         <outlet property="collectionView" destination="8y4-Hw-ibI" id="jBu-z4-AVG"/>
                         <outlet property="commentTextField" destination="ghQ-jO-jLI" id="5bp-zy-SeR"/>
+                        <outlet property="inputViewBottomConstraint" destination="osh-dE-BSl" id="EKl-B6-szY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mO-NP-VaK" userLabel="First Responder" sceneMemberID="firstResponder"/>

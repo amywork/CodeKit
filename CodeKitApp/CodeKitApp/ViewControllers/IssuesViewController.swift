@@ -43,9 +43,7 @@ class IssuesViewController: ListViewController<IssueCell> {
                 let indexPath = IndexPath(item: index, section: 0)
                 self.collectionView.reloadItems(at: [indexPath])
             }
-        }
-        
-        else if let navigationController = segue.destination as? UINavigationController,
+        }else if let navigationController = segue.destination as? UINavigationController,
             let createIssueViewController = navigationController.topViewController as? CreateIssueViewController {
             createIssueViewController.repo = repo
             createIssueViewController.owner = owner

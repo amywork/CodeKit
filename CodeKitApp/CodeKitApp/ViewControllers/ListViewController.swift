@@ -29,7 +29,8 @@ extension DatasourceRefreshable {
     }
 }
 
-class ListViewController<CellType: UICollectionViewCell & CellProtocol> : UIViewController, DatasourceRefreshable, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ListViewController<CellType: UICollectionViewCell & CellProtocol> : UIViewController, DatasourceRefreshable,
+UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   
     lazy var owner: String = { return GlobalState.shared.owner }()
     lazy var repo: String = { return GlobalState.shared.repo }()
@@ -39,7 +40,7 @@ class ListViewController<CellType: UICollectionViewCell & CellProtocol> : UIView
     var dataSource: [Item] = []
     var needRefreshDataSource: Bool = false
     
-    var cellName: String { return "" }
+    var cellName: String { return "" } // Override
     
     let refreshControl = UIRefreshControl()
     var page: Int = 1
@@ -53,8 +54,6 @@ class ListViewController<CellType: UICollectionViewCell & CellProtocol> : UIView
     fileprivate var estimateCell: CellType = CellType.cellFromNib
     var loadMoreCell: LoadMoreFooterView?
     
-    
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()

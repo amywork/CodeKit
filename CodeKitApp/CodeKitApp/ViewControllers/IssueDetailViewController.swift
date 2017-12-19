@@ -14,6 +14,7 @@ class IssueDetailViewController: ListViewController<IssueCommentCell> {
 
     override var cellName: String { return "IssueCommentCell" }
    
+    @IBOutlet weak var inputViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet var commentTextField: UITextField!
     @IBOutlet var collectionView_: UICollectionView!
     @IBOutlet override var collectionView: UICollectionView! {
@@ -27,13 +28,22 @@ class IssueDetailViewController: ListViewController<IssueCommentCell> {
     
     var headerSize: CGSize = CGSize.zero
     
+    var reloadIssue: ((Model.Issue) -> Void)?
     var issue: Model.Issue! {
         didSet {
             collectionView?.reloadData()
         }
     }
     
-    var reloadIssue: ((Model.Issue) -> Void)?
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addKeyboardNotification()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeKeyboardNotification()
+    }
     
     override func viewDidLoad() {
         api = App.api.issueComments(owner: owner, repo: repo, number: issue.number)
@@ -99,6 +109,71 @@ extension IssueDetailViewController {
     }
     
     func changeState() {
+        switch issue.state {
+        case .open:
+            App.api.closeIssue(owner: owner,
+                               repo: repo,
+                               number: issue.number,
+                               issue: issue,
+                               completionHandler:
+                { [weak self] (response: DataResponse<Model.Issue>) in
+                    switch response.result {
+                    case .success(let issue):
+                        self?.issue = issue
+                        self?.reloadIssue?(issue)
+                    case .failure(let error):
+                        print(error)
+                    }
+            })
+        case .closed:
+            App.api.openIssue(owner: owner,
+                               repo: repo,
+                               number: issue.number,
+                               issue: issue,
+                               completionHandler:
+                { [weak self] (response: DataResponse<Model.Issue>) in
+                    switch response.result {
+                    case .success(let issue):
+                        self?.issue = issue
+                        self?.reloadIssue?(issue)
+                    case .failure(let error):
+                        print(error)
+                    }
+            })
+        }
         
     }
+
+}
+
+extension IssueDetailViewController {
+    
+    func addKeyboardNotification() {
+        NotificationCenter.default.addObserver(
+            forName: Notification.Name.UIKeyboardWillChangeFrame,
+            object: nil,
+            queue: nil) { [weak self] (noti: Notification) in
+                guard let `self` = self else { return }
+                guard let keyboardBounds = noti.userInfo?[UIKeyboardFrameEndUserInfoKey] as? CGRect else { return }
+                guard let animationDuration = noti.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? TimeInterval else { return }
+                guard let animationCurve = noti.userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? UInt else { return }
+                let animationOptions = UIViewAnimationOptions(rawValue: animationCurve)
+                let keyboardHeight = keyboardBounds.height
+                let inputBottom = self.view.frame.height - keyboardBounds.origin.y
+                var inset = self.collectionView.contentInset
+                inset.bottom = inputBottom + 80
+                self.collectionView.contentInset = inset
+                self.inputViewBottomConstraint.constant = inputBottom
+                UIView.animate(withDuration: animationDuration,
+                               delay: 0,
+                               options: animationOptions,
+                               animations: { self.view.layoutIfNeeded() },
+                               completion: nil)
+        }
+    }
+    
+    func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
 }

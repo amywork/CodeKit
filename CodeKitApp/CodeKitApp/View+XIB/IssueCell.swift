@@ -21,7 +21,6 @@ final class IssueCell: UICollectionViewCell {
     @IBOutlet weak var commentCountButton: UIButton!
 }
 
-
 extension IssueCell: CellProtocol {
     
     typealias Item = Model.Issue
@@ -42,7 +41,6 @@ extension IssueCell: CellProtocol {
         stateButton.setBackgroundImage(Model.Issue.State.open.color.toImage(), for: .normal)
         stateButton.setTitle(Model.Issue.State.closed.rawValue, for: .selected)
         stateButton.setBackgroundImage(Model.Issue.State.closed.color.toImage(), for: .selected)
-        
         
         commentCountButton.setTitle("💬\(issue.comments)", for: .normal)
         let commentCountHidden: Bool = issue.comments == 0
